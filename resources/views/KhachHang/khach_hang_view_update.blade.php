@@ -1,78 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link href="{{asset('css/file.css')}}" rel="stylesheet" />
 </head>
 <body>
+	<div class="container">
 	<form action="{{ route('khach_hang.khach_hang_process_update', ['id' => $khach_hang->Ma_khach_hang]) }}" method="post">
 		{{csrf_field()}}
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tên Đăng Nhập</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Ten_dang_nhap" value="{{$khach_hang->Ten_dang_nhap}}" placeholder="Tên Đăng Nhập..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Mật Khẩu</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Mat_khau" value="{{$khach_hang->Mat_khau}}" placeholder="Mật Khẩu..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tên Khách Hàng</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Ho_ten" value="{{$khach_hang->Ho_ten}}" placeholder="Tên Khách Hàng..">
+		    </div>
+		  </div>
+
 		<div>
-			Tên Đăng Nhập
-			<input type="text" name="Ten_dang_nhap" class="form-control" value="{{$khach_hang->Ten_dang_nhap}}">
-		</div>
-		<div>
-			Mật Khẩu
-			<input type="text" name="Mat_khau" class="form-control" value="{{$khach_hang->Mat_khau}}">
-		</div>
-		<div>
-			Tên Khách Hàng
-			<input type="text" name="Ho_ten" class="form-control" value="{{$khach_hang->Ho_ten}}">
-		</div>
-		<div>
-			<label class="control-label">
-				Giới tính
-			</label>
-			<label class="radio-inline"><input type="radio" name="Gioi_tinh" value="1"
-				@if ($khach_hang->Gioi_tinh==1)
-					checked 
-				@endif
-				>Nam</label>
-			<label class="radio-inline"><input type="radio" name="Gioi_tinh" value="0"
-				@if ($khach_hang->Gioi_tinh==0)
-					checked 
-				@endif
-				>Nữ</label>
-		</div>
-		<div>
-			Năm sinh
-			<input type="text" name="Nam_sinh" class="form-control" value="{{$khach_hang->Nam_sinh}}">
-		</div>
-		<div>
-			Số Điện Thoại
-			<input type="number" name="Sdt" class="form-control" value="{{$khach_hang->Sdt}}">
-		</div>
-		<div>
-			Địa Chỉ
-			<input type="text" name="Dia_chi" class="form-control" value="{{$khach_hang->Dia_chi}}"> 
-		</div>
-		<div>
-			Email
-			<input type="text" name="Email" class="form-control" value="{{$khach_hang->Email}}">
-		</div>
-		<div>
-			Số Chứng Minh Thư
-			<input type="text" name="So_CMT" class="form-control" value="{{$khach_hang->So_CMT}}">
-		</div>
-		<div>
-			Số Tài Khoản
-			<input type="number" name="So_TK" class="form-control" value="{{$khach_hang->So_TK}}">
-		</div>
-		<div>
-			Tên Ngân Hàng
-			<input type="text" name="Ngan_hang" class="form-control" value="{{$khach_hang->Ngan_hang}}">
-		</div>
-		<div>
-			Tên Cơ Quan
-			<input type="text" name="Ten_co_quan" class="form-control" value="{{$khach_hang->Ten_co_quan}}">
-		</div>
-		<div>
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="lname">Giới Tính</label>
+		    </div>
+		    <div class="col-75">
+				<label class="radio-inline"><input type="radio" name="Gioi_tinh" value="1"
+					@if ($khach_hang->Gioi_tinh==1)
+						checked 
+					@endif
+					>Nam</label>
+				<label class="radio-inline"><input type="radio" name="Gioi_tinh" value="0"
+					@if ($khach_hang->Gioi_tinh==0)
+						checked 
+					@endif
+					>Nữ</label>
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Năm Sinh</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="date" id="fname" name="Nam_sinh" value="{{$khach_hang->Nam_sinh}}" placeholder="Năm Sinh..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Số Điện Thoại</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Sdt" value="{{$khach_hang->Sdt}}" placeholder="Số Điện Thoại..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Địa Chỉ</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Dia_chi" value="{{$khach_hang->Dia_chi}}" placeholder="Địa Chỉ..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Email</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Email" value="{{$khach_hang->Email}}" placeholder="Email..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">CMTND</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="number" id="fname" name="So_CMT" value="{{$khach_hang->So_CMT}}" placeholder="0112353..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Số Tài Khoản</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="number" id="fname" name="So_TK" value="{{$khach_hang->So_TK}}" placeholder="0112353..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tên Ngân Hàng</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Ngan_hang" value="{{$khach_hang->Ngan_hang}}" placeholder="Tên Ngân Hàng..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tên Cơ Quan</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Ten_co_quan" value="{{$khach_hang->Ten_co_quan}}" placeholder="Tên Cơ Quan..">
+		    </div>
+		  </div>
+
+		<center><div class="row">
 		<button>Sửa Khách Hàng</button>
 		<a href="{{url()->previous()}}">
 			<button type="button">
 				Quay lại
 			</button>
 		</a>
-		</div>
+	  	</div></center>
 	</form>
 </body>
 </html>

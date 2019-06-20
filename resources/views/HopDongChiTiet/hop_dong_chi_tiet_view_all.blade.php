@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<h1>Danh sách Hợp Đồng</h1>
+@extends('layer.master')
+@push('css')
+<style type="text/css">
+	h1{
+		color: #FF0000;
+	}
+</style>
+@endpush
+@section('content')
+
+<center>
+	<h1>Danh sách Hợp Đồng chi tiết</h1>
 	<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_view_insert') }}">
 		<button>
 			Thêm
 		</button>
-	</a>
-	<table border="1" width="100%">
+	</a><br><br>
+	
+	<table border="0" width="100%">
 		<tr>
 			<th>Hợp Đồng</th>
 			<th>Xe</th>
 			<th>Giá</th>
 			<th>Ngày Nhận Xe</th>
 			<th>Ngày Trả Xe</th>
-			<th></th>
 			<th></th>
 		</tr>
 		@foreach ($array_hop_dong_chi_tiet as $hop_dong_chi_tiet)
@@ -38,15 +43,20 @@
 					{{$hop_dong_chi_tiet->Ngay_tra}}
 				</td> 
 				<td>
-				<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_view_update', ['id' => $hop_dong_chi_tiet->Ma_hop_dong]) }}" >
-				Sửa
-				</a></td>
-				<td>
-				<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_delete', ['id' => $hop_dong_chi_tiet->Ma_hop_dong]) }}">Xóa
+				<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_view_update', ['id' => $hop_dong_chi_tiet->Ma_hop_dong]) }}" class="btn btn-simple btn-warning btn-icon edit">
+					<i class="fa fa-edit"></i>
+				</a>
+				
+				<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_delete', ['id' => $hop_dong_chi_tiet->Ma_hop_dong]) }}" class="btn btn-simple btn-danger btn-icon remove">
+					<i class="fa fa-times"></i>
 				</a>
 				</td>
 			</tr>
 		@endforeach
-	</table>
-</body>
-</html>
+	</table></center>
+@endsection
+@push('js')
+<script type="text/javascript">
+	
+</script>
+@endpush

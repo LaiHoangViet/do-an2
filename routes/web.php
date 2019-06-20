@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('', 'Controller@layer');
+
+
+
 
 Route::group(['prefix' => 'khach_hang'],function(){
 	Route::get('', 'KhachHangController@khach_hang_view_all')
@@ -128,4 +132,3 @@ Route::group(['prefix' => 'hop_dong_chi_tiet'],function(){
 	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_delete');
 });
 
-Route::get('', 'Controller@layer');

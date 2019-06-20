@@ -2,18 +2,20 @@
 @push('css')
 <style type="text/css">
 	h1{
-		color: red;
+		color: green;
 	}
 </style>
 @endpush
 @section('content')
+
 	<center><h1>Danh sách xe</h1></center>
-	<a href="{{ route('xe.xe_view_insert') }}">
+	<center><a href="{{ route('xe.xe_view_insert') }}">
 		<button>
 			Thêm Xe
 		</button>
-	</a>
-	<table border="1" width="100%">
+	</a></center><br>
+	
+	<center><table border="0" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Tên Xe</th>
 			<th>Ảnh</th>
@@ -23,7 +25,6 @@
 			<th>Giá</th>
 			<th>Tình Trạng</th>
 			<th>Loại Xe</th>
-			<th></th>
 			<th></th>
 		</tr>
 		@foreach ($array_xe as $xe)
@@ -55,18 +56,18 @@
 				</td>
 				<td>
 					{{$xe->Ten_loai_xe}}
-				</td>
 				<td>
-				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}" >
-				Sửa
-				</a></td>
-				<td>
-				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}">Xóa
+				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-warning btn-icon edit">
+					<i class="fa fa-edit"></i>
+				</a>
+				
+				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-danger btn-icon remove">
+					<i class="fa fa-times"></i>
 				</a>
 				</td>
 			</tr>
 		@endforeach
-	</table>
+	</table></center>
 @endsection
 @push('js')
 <script type="text/javascript">

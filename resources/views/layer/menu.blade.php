@@ -18,13 +18,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Trang Chủ </a></li>
-      <li><a href="#">Giới Thiệu</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Loại Xe  <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Xe 4 Chỗ </a></li>
-          <li><a href="#">Xe 8 Chỗ</a></li>
-        </ul>
-      </li>
+      <li><a href="{{ route('xe.xe_view_all') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
+   
       <li><a href="#">Đặt Xe  </a></li>
     </ul>
       <form class="navbar-form navbar-left" action="/action_page.php">

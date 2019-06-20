@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+@extends('layer.master')
+@push('css')
+<style type="text/css">
+	h1{
+		color: green;
+	}
+</style>
+@endpush
+@section('content')
+
+<center>
 	<h1>Danh sách khách hàng</h1>
 	<a href="{{ route('khach_hang.khach_hang_view_insert') }}">
 		<button>
 			Thêm Khách Hàng
 		</button>
-	</a>
-	<table border="1" width="100%">
+	</a><br><br>
+
+	<table border="0" width="100%">
 		<tr>
 			<th>Tên Đăng Nhập</th>
 			<th>Mật Khẩu</th>
@@ -20,11 +26,10 @@
 			<th>Số Điện Thoại</th>
 			<th>Địa Chỉ</th>
 			<th>Email</th>
-			<th>Số Chứng Minh Thư</th>
+			<th>CMTND</th>
 			<th>Số Tài Khoản</th>
 			<th>Tên Ngân Hàng </th>
 			<th>Tên Cơ Quan</th>
-			<th></th>
 			<th></th>
 		</tr>
 		@foreach ($array_khach_hang as $khach_hang)
@@ -70,15 +75,20 @@
 					{{$khach_hang->Ten_co_quan}}
 				</td>
 				<td>
-				<a href="{{ route('khach_hang.khach_hang_view_update', ['id' => $khach_hang->Ma_khach_hang]) }}" >
-				Sửa
-				</a></td>
-				<td>
-				<a href="{{ route('khach_hang.khach_hang_delete', ['id' => $khach_hang->Ma_khach_hang]) }}">Xóa
+				<a href="{{ route('khach_hang.khach_hang_view_update', ['id' => $khach_hang->Ma_khach_hang]) }}" class="btn btn-simple btn-warning btn-icon edit">
+					<i class="fa fa-edit"></i>
 				</a>
-			</td>
+				
+				<a href="{{ route('khach_hang.khach_hang_delete', ['id' => $khach_hang->Ma_khach_hang]) }}" class="btn btn-simple btn-danger btn-icon remove">
+					<i class="fa fa-times"></i>
+				</a>
+				</td>
 			</tr>
 		@endforeach
-	</table>
-</body>
-</html>
+	</table></center>
+@endsection
+@push('js')
+<script type="text/javascript">
+	
+</script>
+@endpush

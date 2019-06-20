@@ -1,57 +1,87 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<link href="{{asset('css/file.css')}}" rel="stylesheet" />
 </head>
 <body>
-	<form action="{{ route('xe.xe_process_insert') }}" method="post">
+
+
+<div class="container">
+  <form action="{{ route('xe.xe_process_insert') }}" method="post">
 		{{csrf_field()}}
-		<div class="form-group">
-			<label class="control-label">
-				Tên Xe
-			</label>
-			<input type="text" name="Ten_xe">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-			Ảnh
-			</label>
-			<input type="text" name="Anh">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-				Biển Số
-			</label>
-			<input type="text" name="Bien_so">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-			Hãng Xe
-			</label>
-			<input type="text" name="Hang_xe">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-			Mô Tả
-			</label>
-			<input type="text" name="Mo_ta">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-			Giá
-			</label>
-			<input type="text" name="Gia">
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-			Tình Trạng
-			<label><input type="radio" name="Tinh_trang" value="1" checked>Còn Xe</label>
-			<label><input type="radio" name="Tinh_trang" value="0">Hết Xe</label>
-		</div>
-		<div class="form-group">
-			<label class="control-label">
-				Loại Xe
-			</label>
+    
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Tên Xe</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="Ten_xe" placeholder="Tên xe..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Ảnh</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="Anh">
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Biển Số</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="Bien_so" placeholder="29C1-XXX.XX..">
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Hãng Xe</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="Hang_xe" placeholder="SUV..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Mô Tả</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="Mo_ta" placeholder="Write something.." style="height:200px"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Giá</label>
+    </div>
+    <div class="col-75">
+      <input class="input" type="text" id="lname" name="Gia" placeholder="1000 VND..">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Tình Trạng</label>
+    </div>
+    <div class="col-75">
+    	<label><input type="radio" id="lname" name="Tinh_trang" value="1" checked>Còn Xe</label>
+		<label><input type="radio" id="lname" name="Tinh_trang" value="0">Hết Xe</label>
+    </div>
+  </div>
+
+	<div class="row">
+    <div class="col-25">
+      <label for="fname">Loại Xe</label>
+    </div>
+    <div class="col-75">
+      </label>
 			<select class="form-control" name="Ma_loai_xe">
 				@foreach ($array_loai_xe as $loai_xe)
 					<option value="{{$loai_xe->Ma_loai_xe}}">
@@ -59,15 +89,19 @@
 					</option>
 				@endforeach
 			</select>
-		</div>
-		<div>
-			<button>Thêm Khách Hàng</button>
+    </div>
+  </div><br>
+
+  <center><div class="row">
+    <button>Thêm Xe</button>
 			<a href="{{url()->previous()}}">
 				<button type="button">
 					Quay lại
 				</button>
 			</a>
-		</div>
-	</form>
+  </div></center>
+  </form>
+</div>
+
 </body>
 </html>

@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link href="{{asset('css/file.css')}}" rel="stylesheet" />
 </head>
 <body>
+	<div class="container">
 	<form action="{{ route('hop_dong.hop_dong_process_update', ['id' => $hop_dong->Ma_hop_dong]) }}" method="post">
 		{{csrf_field()}}
-		<div>
-		Hợp Đồng
-		<input type="text" name="So_hop_dong" class="form-control" value="{{$hop_dong->So_hop_dong}}">
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Hợp Đồng</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="So_hop_dong" value="{{$hop_dong->So_hop_dong}}" placeholder="Hợp Đồng..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Ngày</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="date" id="fname" name="Ngay" value="{{$hop_dong->Ngay}}">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Khách Hàng</label>
+		    </div>
+		    <div class="col-75">
+				<select class="form-control" name="Ma_khach_hang">
+					@foreach ($array_khach_hang as $khach_hang)
+						<option value="{{$khach_hang->Ma_khach_hang}}">
+							{{$khach_hang->Ho_ten}}
+						</option>
+					@endforeach
+				</select>
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="subject">Nội Dung</label>
+		    </div>
+		    <div class="col-75">
+		      <textarea id="subject" name="ND_hop_dong" value="{{$hop_dong->ND_hop_dong}}" placeholder="Nội Dung.." style="height:200px"></textarea>
+		  </div>
 		</div>
-		<div>
-		Ngày
-		<input type="text" name="Ngay" class="form-control" value="{{$hop_dong->Ngay}}">
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Hình Thức Thanh Toán</label>
+		    </div>
+		    <div class="col-75">
+		      <select name="Hinh_thuc_thanh_toan" id="" class="fo-input" value="{{$hop_dong->Hinh_thuc_thanh_toan}}">
+		      	<option>-- Chọn phương thức thanh toán --</option>
+		      	<option>Chuyển khoản</option>
+		      	<option>Tiền mặt</option>
+		      </select>
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="subject">Điều Khoản</label>
+		    </div>
+		    <div class="col-75">
+		      <textarea id="subject" name="Dieu_khoan" value="{{$hop_dong->Dieu_khoan}}" placeholder="Điều Khoản.." style="height:200px"></textarea>
+		  </div>
 		</div>
-		<div>
-			Khách Hàng
-		<select class="form-control" name="Ma_khach_hang">
-			@foreach ($array_khach_hang as $khach_hang)
-				<option value="{{$khach_hang->Ma_khach_hang}}">
-					{{$khach_hang->Ho_ten}}
-				</option>
-			@endforeach
-		</select>
-		</div>
-		<div>
-		Nội Dung
-		<input type="text" name="ND_hop_dong" class="form-control" value="{{$hop_dong->ND_hop_dong}}">
-		</div>
-		<div>
-		Hình Thức Thanh Toán
-		<input type="text" name="Hinh_thuc_thanh_toan" class="form-control" value="{{$hop_dong->Hinh_thuc_thanh_toan}}">
-		</div>
-		<div>
-		Điều Khoản
-		<input type="text" name="Dieu_khoan" class="form-control" value="{{$hop_dong->Dieu_khoan}}">
-		</div>
-		<div>
-		Tổng Tiền
-		<input type="text" name="Tong_tien_thanh_toan" class="form-control" value="{{$hop_dong->Tong_tien_thanh_toan}}">
-		</div>
-		<div>
-		Tiền Cọc
-		<input type="text" name="Tien_coc" class="form-control" value="{{$hop_dong->Tien_coc}}">
-		</div>
-		<div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tổng Tiền</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Tong_tien_thanh_toan" value="{{$hop_dong->Tong_tien_thanh_toan}}" placeholder="2.000.000VND..">
+		    </div>
+		  </div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="fname">Tiền Cọc</label>
+		    </div>
+		    <div class="col-75">
+		      <input type="text" id="fname" name="Tien_coc" value="{{$hop_dong->Tien_coc}}" placeholder="2.000.000VND..">
+		    </div>
+		  </div>
+
+		<center><div class="row">
 		<button class="btn btn-success">
 		Sửa
 	</button>
@@ -52,7 +98,8 @@
 		<button type="button" class="btn btn-danger">
 			Quay lại
 		</button>
-	</a></div>
+	</a>
+	</div></center>
 	</form>
 
 </body>
