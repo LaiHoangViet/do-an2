@@ -18,9 +18,9 @@ class SuaChua extends Migration
             $table->date('Ngay_sua');
             $table->integer('Ma_xe')->unsigned();
             $table->foreign('Ma_xe')->references('Ma_xe')->on('xe');
-            $table->boolean('Tinh_trang');
+            $table->string('Tinh_trang');
             $table->date('Ngay_sua_xong');
-            $table->float('Chi_phi');
+            $table->string('Chi_phi');
             $table->primary(['Ngay_sua','Ma_xe']);
         });
     }

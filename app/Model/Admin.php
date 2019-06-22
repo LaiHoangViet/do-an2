@@ -20,6 +20,8 @@ class Admin
 	{
 		$array = DB::select("select * from $this->table");
 		return $array;
+
+		
 	}
 	public function insert()
 	{
@@ -37,41 +39,11 @@ class Admin
 	}
 	public function get_one()
 	{
-		$array = DB::select("select * from $this->table
-			where Ma_admin = ?
-			limit 1",[
-				$this->Ma_admin
-			]);
-		return $array[0];
-	}
-	public function update()
-	{
-		DB::update("update $this->table
-			set
-			Ten_dang_nhap = ?,
-			Mat_khau = ?,
-			Gioi_tinh = ?,
-			Nam_sinh = ?,
-			Sdt = ?,
-			Dia_chi = ?,
-			Email = ?
-			where Ma_admin = ?
-			",[
-				$this->Ten_dang_nhap,
-				$this->Mat_khau,
-				$this->Gioi_tinh,
-				$this->Nam_sinh,
-				$this->Sdt,
-				$this->Dia_chi,
-				$this->Email,
-				$this->Ma_admin
-			]);
-	}
-	public function delete()
-	{
-		DB::delete("delete from $this->table
-			where Ma_admin = ?",[
-				$this->Ma_admin
-			]);
+
+		$array = DB::select("select * from $this->table where Email = ? and Mat_khau = ? limit 1",[
+			$this->Email,
+			$this->Mat_khau
+		]);
+		return $array;
 	}
 }

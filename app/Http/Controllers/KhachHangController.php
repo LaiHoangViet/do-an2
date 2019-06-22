@@ -31,9 +31,6 @@ class KhachHangController extends Controller
         $khach_hang->Sdt = Request::get('Sdt');
         $khach_hang->Dia_chi = Request::get('Dia_chi');
         $khach_hang->Email = Request::get('Email');
-        $khach_hang->So_CMT = Request::get('So_CMT');
-        $khach_hang->So_TK = Request::get('So_TK');
-        $khach_hang->Ngan_hang = Request::get('Ngan_hang');
         $khach_hang->Ten_co_quan = Request::get('Ten_co_quan');
         $khach_hang->insert();
 
@@ -61,9 +58,6 @@ class KhachHangController extends Controller
         $khach_hang->Sdt = Request::get('Sdt');
         $khach_hang->Dia_chi = Request::get('Dia_chi');
         $khach_hang->Email = Request::get('Email');
-        $khach_hang->So_CMT = Request::get('So_CMT');
-        $khach_hang->So_TK = Request::get('So_TK');
-        $khach_hang->Ngan_hang = Request::get('Ngan_hang');
         $khach_hang->Ten_co_quan = Request::get('Ten_co_quan');
         $khach_hang->update();
 

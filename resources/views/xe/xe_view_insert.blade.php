@@ -26,7 +26,8 @@
       <label for="lname">Ảnh</label>
     </div>
     <div class="col-75">
-      <input type="text" id="fname" name="Anh">
+      <input type="file" name="Anh">
+  <input type="submit" name="submit" value="upload">
     </div>
   </div>
 

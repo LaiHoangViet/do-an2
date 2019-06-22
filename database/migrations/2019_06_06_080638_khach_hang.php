@@ -23,9 +23,6 @@ class KhachHang extends Migration
             $table->string('Sdt',11);
             $table->string('Dia_chi',50);
             $table->string('Email',50);
-            $table->string('So_CMT',50);
-            $table->string('So_TK',50);
-            $table->string('Ngan_hang',50);
             $table->string('Ten_co_quan',50);
         });
     }

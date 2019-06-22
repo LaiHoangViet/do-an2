@@ -1,11 +1,5 @@
-@extends('layer.master')
-@push('css')
-<style type="text/css">
-	h1{
-		color: green;
-	}
-</style>
-@endpush
+@extends('layerAdmin.Admin_master')
+
 @section('content')
 
 <center>
@@ -26,9 +20,6 @@
 			<th>Số Điện Thoại</th>
 			<th>Địa Chỉ</th>
 			<th>Email</th>
-			<th>CMTND</th>
-			<th>Số Tài Khoản</th>
-			<th>Tên Ngân Hàng </th>
 			<th>Tên Cơ Quan</th>
 			<th></th>
 		</tr>
@@ -63,15 +54,6 @@
 					{{$khach_hang->Email}}
 				</td>
 				<td>
-					{{$khach_hang->So_CMT}}
-				</td>
-				<td>
-					{{$khach_hang->So_TK}}
-				</td>
-				<td>
-					{{$khach_hang->Ngan_hang}}
-				</td>
-				<td>
 					{{$khach_hang->Ten_co_quan}}
 				</td>
 				<td>
@@ -87,8 +69,3 @@
 		@endforeach
 	</table></center>
 @endsection
-@push('js')
-<script type="text/javascript">
-	
-</script>
-@endpush

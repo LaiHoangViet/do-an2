@@ -19,11 +19,11 @@ class HopDong extends Migration
             $table->date('Ngay');
             $table->integer('Ma_khach_hang')->unsigned();
             $table->foreign('Ma_khach_hang')->references('Ma_khach_hang')->on('khach_hang');
-            $table->string('ND_hop_dong',50);
+            $table->longText('ND_hop_dong',50);
             $table->string('Hinh_thuc_thanh_toan',50);
-            $table->string('Dieu_khoan',50);
-            $table->float('Tong_tien_thanh_toan',50);
-            $table->float('Tien_coc',50);
+            $table->longText('Dieu_khoan',50);
+            $table->string('Tong_tien_thanh_toan',50);
+            $table->string('Tien_coc',50);
         });
     }
 

@@ -1,11 +1,5 @@
-@extends('layer.master')
-@push('css')
-<style type="text/css">
-	h1{
-		color: red;
-	}
-</style>
-@endpush
+@extends('layerAdmin.Admin_master')
+
 @section('content')
 
 <center>
@@ -67,8 +61,3 @@
 		@endforeach
 	</table></center>
 @endsection
-@push('js')
-<script type="text/javascript">
-	
-</script>
-@endpush

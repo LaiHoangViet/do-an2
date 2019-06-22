@@ -18,7 +18,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Trang Chủ </a></li>
-      <li><a href="{{ route('xe.xe_view_all') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
+      <li><a href="#"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
    
       <li><a href="#">Đặt Xe  </a></li>
     </ul>
@@ -34,7 +34,8 @@
     </form>
     <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="{{ route('khach_hang_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href="{{ route('khach_hang_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
   </div>
 </nav>

@@ -1,11 +1,12 @@
-@extends('layer.master')
+@extends('layerAdmin.Admin_master')
 @push('css')
-<style type="text/css">
+<style>
 	h1{
-		color: green;
+		color: #F8F8FF;
 	}
 </style>
 @endpush
+
 @section('content')
 
 	<center><h1>Danh sách xe</h1></center>
@@ -15,7 +16,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="0" width="80%" bgcolor="CCFF66">
+	<center><table border="1" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Tên Xe</th>
 			<th>Ảnh</th>
@@ -25,6 +26,7 @@
 			<th>Giá</th>
 			<th>Tình Trạng</th>
 			<th>Loại Xe</th>
+			<th></th>
 			<th></th>
 		</tr>
 		@foreach ($array_xe as $xe)
@@ -56,21 +58,17 @@
 				</td>
 				<td>
 					{{$xe->Ten_loai_xe}}
+				</td>
 				<td>
-				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-warning btn-icon edit">
-					<i class="fa fa-edit"></i>
-				</a>
+				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}">
+					<span class="far fa-edit"></span>
+				</a></td>
 				
-				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-danger btn-icon remove">
-					<i class="fa fa-times"></i>
+				<td>
+				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}" class="glyphicon glyphicon-remove">
 				</a>
 				</td>
 			</tr>
 		@endforeach
 	</table></center>
 @endsection
-@push('js')
-<script type="text/javascript">
-	
-</script>
-@endpush	

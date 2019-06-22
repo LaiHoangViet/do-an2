@@ -10,10 +10,52 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('', 'Controller@layer');
+Route::get('layer', 'Controller@layer')->name("layer");
 
 
+Route::get('add', ['uses'=>'UploadController@getAdd',
+'as'=>'public.news.add']);
+Route::post('add', ['uses'=>'UploadController@postAdd',
+'as'=>'public.news.add']);
 
+
+Route::get("Admin_view_login", "Controller@Admin_view_login")
+->name("Admin_view_login");
+Route::post("Admin_process_login", "Controller@Admin_process_login")
+->name("Admin_process_login");
+
+Route::get("khach_hang_view_login", "Controller@khach_hang_view_login")
+->name("khach_hang_view_login");
+Route::post("khach_hang_process_login", "Controller@khach_hang_process_login")
+->name("khach_hang_process_login");
+
+Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"],function(){
+
+
+	Route::get('layerAdmin', 'Controller@layerAdmin')->name("layerAdmin");
+	
+	
+	Route::get("Admin_logout", "Controller@Admin_logout")
+	->name("Admin_logout");	
+
+	Route::get("khach_hang_logout", "Controller@khach_hang_logout")
+	->name("khach_hang_logout");	
+	
+	Route::get("khach_hang_logout", "Controller@khach_hang_logout")
+	->name("khach_hang_logout");
+
+Route::group(['prefix' => 'Admin'],function(){
+	Route::get('', 'AdminController@Admin_view_all')
+	->name('Admin.Admin_view_all');
+
+	Route::get('Admin_view_insert', 'AdminController@Admin_view_insert')
+	->name('Admin.Admin_view_insert');
+
+	Route::post('Admin_process_insert', 'AdminController@Admin_process_insert')
+	->name('Admin.Admin_process_insert');
+
+
+});
 
 Route::group(['prefix' => 'khach_hang'],function(){
 	Route::get('', 'KhachHangController@khach_hang_view_all')
@@ -35,25 +77,7 @@ Route::group(['prefix' => 'khach_hang'],function(){
 	->name('khach_hang.khach_hang_delete');
 });
 
-Route::group(['prefix' => 'Admin'],function(){
-	Route::get('', 'AdminController@Admin_view_all')
-	->name('Admin.Admin_view_all');
 
-	Route::get('Admin_view_insert', 'AdminController@Admin_view_insert')
-	->name('Admin.Admin_view_insert');
-
-	Route::post('Admin_process_insert', 'AdminController@Admin_process_insert')
-	->name('Admin.Admin_process_insert');
-
-	Route::get('Admin_view_update/{id}', 'AdminController@Admin_view_update')
-	->name('Admin.Admin_view_update');
-	
-	Route::post('Admin_process_update/{id}', 'AdminController@Admin_process_update')
-	->name('Admin.Admin_process_update');
-
-	Route::get('Admin_delete/{id}', 'AdminController@Admin_delete')
-	->name('Admin.Admin_delete');
-});
 
 Route::group(['prefix' => 'loai_xe'],function(){
 	Route::get('', 'LoaiXeController@loai_xe_view_all')
@@ -132,3 +156,26 @@ Route::group(['prefix' => 'hop_dong_chi_tiet'],function(){
 	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_delete');
 });
 
+
+Route::group(['prefix' => 'dat_xe'],function(){
+	Route::get('', 'DatXeController@dat_xe_view_all')
+	->name('dat_xe.dat_xe_view_all');
+
+	Route::get('dat_xe_view_insert', 'DatXeController@dat_xe_view_insert')
+	->name('dat_xe.dat_xe_view_insert');
+
+	Route::post('dat_xe_process_insert', 'DatXeController@dat_xe_process_insert')
+	->name('dat_xe.dat_xe_process_insert');
+});
+
+Route::group(['prefix' => 'sua_chua'],function(){
+	Route::get('', 'SuaChuaController@sua_chua_view_all')
+	->name('sua_chua.sua_chua_view_all');
+
+	Route::get('sua_chua_view_insert', 'SuaChuaController@sua_chua_view_insert')
+	->name('sua_chua.sua_chua_view_insert');
+
+	Route::post('sua_chua_process_insert', 'SuaChuaController@sua_chua_process_insert')
+	->name('sua_chua.sua_chua_process_insert');
+});
+});

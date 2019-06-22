@@ -84,33 +84,6 @@
 
 		  <div class="row">
 		    <div class="col-25">
-		      <label for="fname">CMTND</label>
-		    </div>
-		    <div class="col-75">
-		      <input type="number" id="fname" name="So_CMT" placeholder="0112353..">
-		    </div>
-		  </div>
-
-		  <div class="row">
-		    <div class="col-25">
-		      <label for="fname">Số Tài Khoản</label>
-		    </div>
-		    <div class="col-75">
-		      <input type="number" id="fname" name="So_TK" placeholder="0112353..">
-		    </div>
-		  </div>
-
-		  <div class="row">
-		    <div class="col-25">
-		      <label for="fname">Tên Ngân Hàng</label>
-		    </div>
-		    <div class="col-75">
-		      <input type="text" id="fname" name="Ngan_hang" placeholder="Tên Ngân Hàng..">
-		    </div>
-		  </div>
-
-		  <div class="row">
-		    <div class="col-25">
 		      <label for="fname">Tên Cơ Quan</label>
 		    </div>
 		    <div class="col-75">

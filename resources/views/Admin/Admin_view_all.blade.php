@@ -1,13 +1,12 @@
-@extends('layer.master')
-@push('css')
+@extends('layerAdmin.Admin_master')
 <style type="text/css">
-	h1{
-		color: red;
+	.container{
+		background-color: #FFFAF0
 	}
 </style>
-@endpush
 @section('content')
 
+<div class="container">
 <center>
 	<h1>Danh sách Admin</h1>
 	<a href="{{ route('Admin.Admin_view_insert') }}">
@@ -54,21 +53,10 @@
 				<td>
 					{{$Admin->Email}}
 				</td>
-				<td>
-				<a href="{{ route('Admin.Admin_view_update', ['id' => $Admin->Ma_admin]) }}" class="btn btn-simple btn-warning btn-icon edit">
-					<i class="fa fa-edit"></i>
-				</a>
 				
-				<a href="{{ route('Admin.Admin_delete', ['id' => $Admin->Ma_admin]) }}" class="btn btn-simple btn-danger btn-icon remove">
-					<i class="fa fa-times"></i>
-				</a>
-				</td>
 			</tr>
 		@endforeach
 	</table></center>
+	</div>
 @endsection
-@push('js')
-<script type="text/javascript">
 	
-</script>
-@endpush	

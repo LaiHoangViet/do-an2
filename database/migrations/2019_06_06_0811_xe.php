@@ -20,7 +20,7 @@ class Xe extends Migration
             $table->string('Bien_so',50);
             $table->string('Hang_xe',50);
             $table->longText('Mo_ta');
-            $table->float ('Gia');
+            $table->string ('Gia');
             $table->boolean ('Tinh_trang');
             $table->integer('Ma_loai_xe')->unsigned();
             $table->foreign('Ma_loai_xe')->references('Ma_loai_xe')->on('loai_xe');

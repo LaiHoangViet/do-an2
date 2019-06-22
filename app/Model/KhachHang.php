@@ -16,9 +16,6 @@ class KhachHang
 	public $Sdt;
 	public $Dia_chi;
 	public $Email;
-	public $So_CMT;
-	public $So_TK;
-	public $Ngan_hang;
 	public $Ten_co_quan;
 	
 	public function get_all()
@@ -28,8 +25,8 @@ class KhachHang
 	}
 	public function insert()
 	{
-		DB::insert("insert into $this->table(Ten_dang_nhap,Mat_khau,Ho_ten,Gioi_tinh,Nam_sinh,Sdt,Dia_chi,Email,So_CMT,So_TK,Ngan_hang,Ten_co_quan)
-			values(?,?,?,?,?,?,?,?,?,?,?,?)",[
+		DB::insert("insert into $this->table(Ten_dang_nhap,Mat_khau,Ho_ten,Gioi_tinh,Nam_sinh,Sdt,Dia_chi,Email,Ten_co_quan)
+			values(?,?,?,?,?,?,?,?,?)",[
 				$this->Ten_dang_nhap,
 				$this->Mat_khau,
 				$this->Ho_ten,
@@ -38,9 +35,6 @@ class KhachHang
 				$this->Sdt,
 				$this->Dia_chi,
 				$this->Email,
-				$this->So_CMT,
-				$this->So_TK,
-				$this->Ngan_hang,
 				$this->Ten_co_quan,
 				
 			]);
@@ -52,6 +46,7 @@ class KhachHang
 			limit 1",[
 				$this->Ma_khach_hang
 			]);
+		
 		return $array[0];
 	}
 	public function update()
@@ -66,9 +61,6 @@ class KhachHang
 			Sdt = ?,
 			Dia_chi = ?,
 			Email = ?,
-			So_CMT = ?,
-			So_TK = ?,
-			Ngan_hang = ?,
 			Ten_co_quan = ?
 			where Ma_khach_hang = ?
 			",[
@@ -80,9 +72,6 @@ class KhachHang
 				$this->Sdt,
 				$this->Dia_chi,
 				$this->Email,
-				$this->So_CMT,
-				$this->So_TK,
-				$this->Ngan_hang,
 				$this->Ten_co_quan,
 				$this->Ma_khach_hang
 			]);

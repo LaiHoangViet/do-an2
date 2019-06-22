@@ -18,7 +18,7 @@ class HopDongChiTiet extends Migration
             $table->foreign('Ma_hop_dong')->references('Ma_hop_dong')->on('hop_dong');
             $table->integer('Ma_xe')->unsigned();
             $table->foreign('Ma_xe')->references('Ma_xe')->on('xe');
-            $table->float ('Gia');
+            $table->string ('Gia');
             $table->date('Ngay_nhan');
             $table->date('Ngay_tra');
             $table->primary(['Ma_hop_dong']);
