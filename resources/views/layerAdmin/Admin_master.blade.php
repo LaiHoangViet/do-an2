@@ -19,6 +19,7 @@
                     <div class="main-panel">
                         <!--header-->
             @include('layerAdmin.header_Admin')
+            
             <div class="content">
                 
                 <!--content-->

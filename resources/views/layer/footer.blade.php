@@ -1,7 +1,7 @@
 
 <div id="footer">
   <div class="container">
-    <p class="text-muted">This Bootstrap Example courtesy <a href="http://www.bootply.com">Bootply.com</a></p>
+    <p class="text-muted">Địa chỉ:Hai Bà Trưng, Hà Nội.</p>
   </div>
 </div>
 

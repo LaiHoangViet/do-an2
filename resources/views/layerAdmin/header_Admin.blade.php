@@ -25,39 +25,9 @@
                                                 </div>
                                             </form>
                                 
-                            <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-
-        <li><a href="{{ route('Admin_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-
-        
-        <li class="dropdown">
-            <a href="{{ route('Admin_logout') }}" class="dropdown-toggle" data-toggle="dropdown">
-        
-                <i class="fa fa-gavel"></i>
-        
-                    <p class="hidden-md hidden-lg">
-                            Conta
-        
-                        <b class="caret"></b>
-        
-                    </p>
-        
-            </a>
-        
-        <ul class="dropdown-menu dropdown-with-icons">
-        
-            <li>
-        
-                <a href="index.html" class="text-danger">
-        
-                    <i class="fa-2x">&times;</i>
-                        Log out
-                </a>
-            </li>
-        </ul>
-    </li>
-  </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ route('Admin_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
 </div>
 </div>
 </nav>

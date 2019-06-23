@@ -17,6 +17,7 @@
   </div>
   <input type="text" name="Email" v-model="login.login" placeholder="Email" />
   <input type="password" name="Mat_khau" v-model="login.password" placeholder="Password" />
+  <a href="{{route('sign_up')}}">Sign Up</a>
   <button v-on:click="onSubmit">Log in</button>
  </form>
 </section>

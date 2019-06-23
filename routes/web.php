@@ -24,10 +24,20 @@ Route::get("Admin_view_login", "Controller@Admin_view_login")
 Route::post("Admin_process_login", "Controller@Admin_process_login")
 ->name("Admin_process_login");
 
+
 Route::get("khach_hang_view_login", "Controller@khach_hang_view_login")
 ->name("khach_hang_view_login");
 Route::post("khach_hang_process_login", "Controller@khach_hang_process_login")
 ->name("khach_hang_process_login");
+
+Route::get("khach_hang_logout", "Controller@khach_hang_logout")
+	->name("khach_hang_logout");
+
+Route::get("sign_up", "SignUpController@sign_up")
+->name("sign_up");
+Route::post("process_sign_up", "SignUpController@process_sign_up")
+->name("process_sign_up");	
+
 
 Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"],function(){
 
@@ -38,11 +48,6 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"],function(){
 	Route::get("Admin_logout", "Controller@Admin_logout")
 	->name("Admin_logout");	
 
-	Route::get("khach_hang_logout", "Controller@khach_hang_logout")
-	->name("khach_hang_logout");	
-	
-	Route::get("khach_hang_logout", "Controller@khach_hang_logout")
-	->name("khach_hang_logout");
 
 Route::group(['prefix' => 'Admin'],function(){
 	Route::get('', 'AdminController@Admin_view_all')

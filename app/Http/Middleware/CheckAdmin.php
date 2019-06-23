@@ -19,7 +19,7 @@ class checkAdmin
         if(Session::has('Ma_admin')){
             return $next($request);
         }
-        return redirect()->route('view_login')->with('error','Bạn phải đăng nhập đã');
+        return redirect()->route('Admin_view_login')->with('error','Bạn phải đăng nhập đã');
     }
 
 }

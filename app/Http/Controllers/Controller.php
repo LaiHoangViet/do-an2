@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\Model\Admin;
 use App\Model\KhachHangLogin;
+use App\Model\KhachHang;
 use Request;
 use Session;
 
@@ -72,7 +73,12 @@ class Controller extends BaseController
     }
     public function khach_hang_logout()
     {
-    	Session::flush();
-    	 return redirect()->route('khach_hang_view_login');
+        // Session::forget('ma_admin');
+
+        Session::flush();
+
+        return redirect()->route('khach_hang_view_login');
     }
+
+
 }
