@@ -1,6 +1,14 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 100%;
+		height: 500px;
+	}
+</style>
 @section('content')
+
+<div class="container">
 
 	<center><h1>Danh sách đặt xe</h1></center>
 	<center><a href="{{ route('dat_xe.dat_xe_view_insert') }}">
@@ -9,7 +17,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="1" width="80%" bgcolor="CCFF66">
+	<center><table border="0" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Ngày Đặt</th>
 			<th>Tên Khách Hàng</th>
@@ -65,8 +73,8 @@
 					{{$dat_xe->Ngay_tra}}
 				</td>
 
-
+</tr>
 		@endforeach
-	</table></center>
+	</table></center></div>
 @endsection
 

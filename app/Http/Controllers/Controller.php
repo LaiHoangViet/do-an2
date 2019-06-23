@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Model\Admin;
 use App\Model\KhachHangLogin;
 use App\Model\KhachHang;
+use App\Model\LoaiXe;
+use DB;
 use Request;
 use Session;
 
@@ -78,6 +80,31 @@ class Controller extends BaseController
         Session::flush();
 
         return redirect()->route('khach_hang_view_login');
+    }
+
+    public function Content()
+    {
+        $xe = DB::table('xe')->select('Ma_xe','Ten_xe','Anh','Hang_xe','Gia','Ma_loai_xe')->orderBy('Ma_xe','DESC')->skip(0)->take(4)->get();
+        return view('layer.Content',compact('xe'));
+    }
+
+
+    public function tim_kiem(Request $request)
+    {
+        $loai_xe = loai_xe::where('Ten_loai_xe','like','%'.$request->key.'%')
+        ->orWhere('unit_price',$request->key)
+        ->get();
+        return view('tim_kiem',compact('loai_xe'));
+    }
+
+    public function the_loai()
+    {
+        return view('layer.the_loai');
+    }
+
+    public function gioi_thieu()
+    {
+        return view('gioi_thieu');
     }
 
 

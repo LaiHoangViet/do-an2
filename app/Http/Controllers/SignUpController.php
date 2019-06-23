@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\Model\KhachHang;
+use App\Model\Admin;
+
 use Request;
 
 
@@ -37,6 +39,28 @@ class SignUpController extends BaseController
         $khach_hang->insert();
 
         return redirect()->route('layer');
+    }
+
+    public function Admin_sign_up()
+    {
+        $Admin       = new Admin();
+        $array_Admin = $Admin->get_all();
+        return view('Admin_sign_up',[
+            'array_Admin' => $array_Admin]);
+    }
+    public function Admin_process_sign_up()
+    {
+        $Admin = new Admin();
+        $Admin->Ten_dang_nhap = Request::get('Ten_dang_nhap');
+        $Admin->Email = Request::get('Email');
+        $Admin->Mat_khau = Request::get('Mat_khau');
+        $Admin->Dia_chi = Request::get('Dia_chi');
+        $Admin->Sdt = Request::get('Sdt');
+        $Admin->Gioi_tinh = Request::get('Gioi_tinh');
+        $Admin->Nam_sinh = Request::get('Nam_sinh');
+        $Admin->insert();
+
+        return redirect()->route('layerAdmin');
     }
 
 }

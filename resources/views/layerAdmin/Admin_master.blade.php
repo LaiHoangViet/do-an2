@@ -8,8 +8,11 @@
 
     <link rel="stylesheet" href="https://darkceptor44.000webhostapp.com/assets/css/light-bootstrap-dashboard.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://darkceptor44.000webhostapp.com/assets/css/dark-bootstrap-dashboard.css" rel="stylesheet" type="text/css" />
 
     <link href="{{asset('css/admin.css')}}" rel="stylesheet" />
+
+    
   </head>
   <body>
      <div class="wrapper">

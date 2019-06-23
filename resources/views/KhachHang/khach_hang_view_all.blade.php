@@ -1,7 +1,14 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 50%;
+		height: 500px;
+	}
+</style>
 @section('content')
 
+<div class="container">
 <center>
 	<h1>Danh sách khách hàng</h1>
 	<a href="{{ route('khach_hang.khach_hang_view_insert') }}">
@@ -68,4 +75,5 @@
 			</tr>
 		@endforeach
 	</table></center>
+</div>
 @endsection

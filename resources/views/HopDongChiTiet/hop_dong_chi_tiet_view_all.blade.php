@@ -1,6 +1,14 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 100%;
+		height: 500px;
+	}
+</style>
 @section('content')
+
+<div class="container">
 
 <center>
 	<h1>Danh sách Hợp Đồng chi tiết</h1>
@@ -48,4 +56,5 @@
 			</tr>
 		@endforeach
 	</table></center>
+</div>
 @endsection

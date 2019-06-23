@@ -1,7 +1,7 @@
 
             <div class="sidebar" data-color="black" data-image="https://darkceptor44.000webhostapp.com/assets/img/full-screen-image-1.jpg">
                 <div class="logo">
-                    <a href="#" class="logo-text">
+                    <a href="{{ route('layerAdmin') }}" class="logo-text">
                         <i class="fa fa-codepen"></i> DarkLab
                     </a>
                 </div>
@@ -66,7 +66,7 @@
                
 
                         <li class="active">
-                            <a href="{{ route('dat_xe.dat_xe_view_all') }}" title="Dashboard">
+                            <a href="{{ route('sua_chua.sua_chua_view_all') }}" title="Dashboard">
                                 <i class="fa fa-tachometer"></i>
                                 <p>Quản lí sửa chữa  </p>
                             </a>
@@ -74,7 +74,7 @@
                
 
                         <li class="active">
-                            <a href="{{ route('sua_chua.sua_chua_view_all') }}" title="Dashboard">
+                            <a href="{{ route('dat_xe.dat_xe_view_all') }}" title="Dashboard">
                                 <i class="fa fa-tachometer"></i>
                                 <p>Quản lí đặt xe  </p>
                             </a>

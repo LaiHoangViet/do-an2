@@ -30,7 +30,6 @@
   <input type="submit" name="submit" value="upload">
     </div>
   </div>
-
    <div class="row">
     <div class="col-25">
       <label for="lname">Biển Số</label>

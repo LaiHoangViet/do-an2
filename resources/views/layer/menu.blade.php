@@ -18,13 +18,13 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Trang Chủ </a></li>
-      <li><a href="#"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
+      <li><a href="{{ route('gioi_thieu') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
    
       <li><a href="#">Đặt Xe  </a></li>
     </ul>
-      <form class="navbar-form navbar-left" action="/action_page.php">
+      <form class="navbar-form navbar-left" action="{{ route('tim_kiem') }}" method="get">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
+        <input type="text" class="form-control" placeholder="Search" name="key">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit">
             <i class="glyphicon glyphicon-search"></i>

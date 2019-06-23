@@ -1,14 +1,14 @@
 @extends('layerAdmin.Admin_master')
-@push('css')
-<style>
-	h1{
-		color: #F8F8FF;
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 100%;
+		height: 500px;
 	}
 </style>
-@endpush
-
 @section('content')
 
+<div class="container">
 	<center><h1>Danh sách xe</h1></center>
 	<center><a href="{{ route('xe.xe_view_insert') }}">
 		<button>
@@ -16,7 +16,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="1" width="80%" bgcolor="CCFF66">
+	<center><table border="0" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Tên Xe</th>
 			<th>Ảnh</th>
@@ -60,15 +60,17 @@
 					{{$xe->Ten_loai_xe}}
 				</td>
 				<td>
-				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}">
-					<span class="far fa-edit"></span>
+				<a href="{{ route('xe.xe_view_update', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-warning btn-icon edit">
+					<i class="fa fa-edit"></i>
 				</a></td>
 				
 				<td>
-				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}" class="glyphicon glyphicon-remove">
+				<a href="{{ route('xe.xe_delete', ['id' => $xe->Ma_xe]) }}" class="btn btn-simple btn-danger btn-icon remove">
+					<i class="fa fa-times"></i>
 				</a>
 				</td>
 			</tr>
 		@endforeach
 	</table></center>
+</div>
 @endsection

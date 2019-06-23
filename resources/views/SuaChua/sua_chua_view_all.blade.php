@@ -1,7 +1,14 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 100%;
+		height: 500px;
+	}
+</style>
 @section('content')
 
+<div class="container">
 	<center><h1>Danh sách sửa chữa</h1></center>
 	<center><a href="{{ route('sua_chua.sua_chua_view_insert') }}">
 		<button>
@@ -9,7 +16,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="1" width="80%" bgcolor="CCFF66">
+	<center><table border="0" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Ngày Sửa</th>
 			<th>Tên Xe</th>
@@ -45,5 +52,6 @@
 
 		@endforeach
 	</table></center>
+</div>
 @endsection
 		

@@ -1,7 +1,14 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		background-color: #FFFAF0;
+		width: 100%;
+		height: 500px;
+	}
+</style>
 @section('content')
 
+<div class="container">
 	<center><h1>Danh sách Loại Xe</h1>
 	<a href="{{ route('loai_xe.loai_xe_view_insert') }}">
 		<button>
@@ -9,7 +16,7 @@
 		</button>
 	</a><br><br>
 
-	<table border="1" width="20%">
+	<table border="0" width="20%">
 		<tr>
 			<th>Tên Loại Xe</th>
 			<th></th>
@@ -31,4 +38,5 @@
 			</tr>
 		@endforeach
 	</table></center>
+</div>
 @endsection

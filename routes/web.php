@@ -12,11 +12,23 @@
 */
 Route::get('layer', 'Controller@layer')->name("layer");
 
+Route::get('the_loai', 'Controller@the_loai')->name("the_loai");
+
 
 Route::get('add', ['uses'=>'UploadController@getAdd',
 'as'=>'public.news.add']);
 Route::post('add', ['uses'=>'UploadController@postAdd',
 'as'=>'public.news.add']);
+
+
+Route::post("Content", "Controller@Content")
+->name("Content");
+
+Route::get("tim_kiem", "Controller@tim_kiem")
+->name("tim_kiem");
+
+Route::get("gioi_thieu", "Controller@gioi_thieu")
+->name("gioi_thieu");
 
 
 Route::get("Admin_view_login", "Controller@Admin_view_login")
@@ -37,6 +49,11 @@ Route::get("sign_up", "SignUpController@sign_up")
 ->name("sign_up");
 Route::post("process_sign_up", "SignUpController@process_sign_up")
 ->name("process_sign_up");	
+
+Route::get("Admin_sign_up", "SignUpController@Admin_sign_up")
+->name("Admin_sign_up");
+Route::post("Admin_process_sign_up", "SignUpController@Admin_process_sign_up")
+->name("Admin_process_sign_up");	
 
 
 Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"],function(){
