@@ -9,7 +9,7 @@
 
 
 <div class="container">
-  <form action="{{ route('xe.xe_process_insert') }}" method="post">
+  <form action="{{ route('dat_xe.dat_xe_process_insert') }}" method="post">
     {{csrf_field()}}
     
   <div class="row">

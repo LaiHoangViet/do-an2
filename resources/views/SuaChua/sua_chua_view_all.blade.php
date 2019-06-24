@@ -16,7 +16,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="0" width="80%" bgcolor="CCFF66">
+	<center><table border="1" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Ngày Sửa</th>
 			<th>Tên Xe</th>
@@ -47,7 +47,7 @@
 					{{$sua_chua->Chi_phi}}
 				</td>
 			</tr>
-		</table>
+	
 
 
 		@endforeach

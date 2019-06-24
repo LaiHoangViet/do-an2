@@ -82,10 +82,10 @@ class Controller extends BaseController
         return redirect()->route('khach_hang_view_login');
     }
 
-    public function Content()
+    public function ta_ca_xe()
     {
         $xe = DB::table('xe')->select('Ma_xe','Ten_xe','Anh','Hang_xe','Gia','Ma_loai_xe')->orderBy('Ma_xe','DESC')->skip(0)->take(4)->get();
-        return view('layer.Content',compact('xe'));
+        return view('layer.ta_ca_xe',compact('xe'));
     }
 
 

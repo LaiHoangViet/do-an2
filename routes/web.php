@@ -21,8 +21,8 @@ Route::post('add', ['uses'=>'UploadController@postAdd',
 'as'=>'public.news.add']);
 
 
-Route::post("Content", "Controller@Content")
-->name("Content");
+Route::post("ta_ca_xe", "Controller@ta_ca_xe")
+->name("ta_ca_xe");
 
 Route::get("tim_kiem", "Controller@tim_kiem")
 ->name("tim_kiem");

@@ -48,7 +48,7 @@
 		      <label for="lname">Ngày Sửa Xong</label>
 		    </div>
 		    <div class="col-75">
-		      <input class="input" type="date" id="lname" name="Ngay_nhan">
+		      <input class="input" type="date" id="lname" name="Ngay_sua_xong">
 		    </div>
 		  </div>
 

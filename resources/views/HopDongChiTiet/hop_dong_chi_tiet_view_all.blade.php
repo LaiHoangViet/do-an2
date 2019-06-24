@@ -11,7 +11,7 @@
 <div class="container">
 
 <center>
-	<h1>Danh sách Hợp Đồng chi tiết</h1>
+	<h1>Danh sách Hợp Đồng Chi Tiết</h1>
 	<a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_view_insert') }}">
 		<button>
 			Thêm

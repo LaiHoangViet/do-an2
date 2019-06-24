@@ -36,7 +36,7 @@ class SuaChuaController extends Controller
         $sua_chua->Chi_phi  = Request::get('Chi_phi');
         $sua_chua->insert();
 
-        return redirect()->route('SuaChua.sua_chua_view_all');
+        return redirect()->route('sua_chua.sua_chua_view_all');
     }
 
 }

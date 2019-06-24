@@ -19,6 +19,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Trang Chủ </a></li>
       <li><a href="{{ route('gioi_thieu') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
+    
    
       <li><a href="#">Đặt Xe  </a></li>
     </ul>
