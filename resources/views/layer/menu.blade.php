@@ -14,14 +14,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="{{ route('ta_ca_xe') }}">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Trang Chủ </a></li>
+      <li class="active"><a href="{{ route('ta_ca_xe') }}">Trang Chủ </a></li>
       <li><a href="{{ route('gioi_thieu') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
     
    
-      <li><a href="#">Đặt Xe  </a></li>
+      <li><a href="{{ route('dat_hang') }}">Đặt Xe  </a></li>
     </ul>
       <form class="navbar-form navbar-left" action="{{ route('tim_kiem') }}" method="get">
       <div class="input-group">

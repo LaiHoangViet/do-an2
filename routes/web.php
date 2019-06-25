@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('layer', 'Controller@layer')->name("layer");
 
+Route::get('layer', 'Controller@layer')->name("layer");
 Route::get('the_loai', 'Controller@the_loai')->name("the_loai");
 
 
@@ -21,7 +21,7 @@ Route::post('add', ['uses'=>'UploadController@postAdd',
 'as'=>'public.news.add']);
 
 
-Route::post("ta_ca_xe", "Controller@ta_ca_xe")
+Route::get("ta_ca_xe", "Controller@ta_ca_xe")
 ->name("ta_ca_xe");
 
 Route::get("tim_kiem", "Controller@tim_kiem")
@@ -29,6 +29,11 @@ Route::get("tim_kiem", "Controller@tim_kiem")
 
 Route::get("gioi_thieu", "Controller@gioi_thieu")
 ->name("gioi_thieu");
+
+Route::get("dat_hang", "Controller@dat_hang")
+->name("dat_hang");
+Route::post("process_dat_hang", "Controller@process_dat_hang")
+->name("process_dat_hang");
 
 
 Route::get("Admin_view_login", "Controller@Admin_view_login")
@@ -42,8 +47,15 @@ Route::get("khach_hang_view_login", "Controller@khach_hang_view_login")
 Route::post("khach_hang_process_login", "Controller@khach_hang_process_login")
 ->name("khach_hang_process_login");
 
+
+Route::group(["prefix" => "khach_hang", "middleware" => "Check_khach_hang"],function(){
+
+
+
 Route::get("khach_hang_logout", "Controller@khach_hang_logout")
 	->name("khach_hang_logout");
+});
+
 
 Route::get("sign_up", "SignUpController@sign_up")
 ->name("sign_up");

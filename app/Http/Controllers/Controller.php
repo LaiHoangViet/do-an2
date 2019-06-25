@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Model\Admin;
 use App\Model\KhachHangLogin;
 use App\Model\KhachHang;
+use App\Model\Xe;
 use App\Model\LoaiXe;
 use DB;
 use Request;
@@ -84,8 +85,12 @@ class Controller extends BaseController
 
     public function ta_ca_xe()
     {
-        $xe = DB::table('xe')->select('Ma_xe','Ten_xe','Anh','Hang_xe','Gia','Ma_loai_xe')->orderBy('Ma_xe','DESC')->skip(0)->take(4)->get();
-        return view('layer.ta_ca_xe',compact('xe'));
+        $xe = new Xe();
+        $array_xe = $xe->get_all();
+
+        return view('layer.ta_ca_xe',[
+            'array_xe' => $array_xe
+        ]);
     }
 
 
@@ -106,6 +111,7 @@ class Controller extends BaseController
     {
         return view('gioi_thieu');
     }
+
 
 
 }

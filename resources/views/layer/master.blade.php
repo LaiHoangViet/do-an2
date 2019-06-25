@@ -32,28 +32,21 @@
     <div class="main-panel">
         <!--header-->
         @include('layer.header')
-
-
-
-
-        <div class="main-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        @yield('content')
-                        
-
-                        <!--content-->
-                    </div>
+    </div>
+    <div class="main-content" style="height: 500px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    @yield('content')
+                    <!--content-->
+                    
+                 
                 </div>
             </div>
         </div>
-
-        <!--footer-->
-        @include('layer.footer')
-
-
     </div>
+    <!--footer-->
+     @include('layer.footer')
 </div>
 
 

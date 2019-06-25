@@ -10,7 +10,7 @@
                                                     <div class="item">
                                 <div class="home2-in">
                                     <div class="home2-in-img">
-                                        <img src="/admin/uploads/files/xe-29-cho/1466761539_ele29-1.jpg" alt="#">
+                                        chao mung den voi trang web
                                     </div>
                                     
                             </div>

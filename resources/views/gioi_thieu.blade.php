@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div class="container">
 AsCar – website cho thuê xe hàng đầu Việt Nam
 <br><br>
  Chúng tôi cung cấp các dịch vụ cho thuê xe dài ngày, ngắn ngàychuyên nghiệp, phục vụ đa

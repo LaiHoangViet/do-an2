@@ -1,26 +1,28 @@
-<section id="featured" class="row mt40">
-            <div class="container">
-                <ul class="thumbnails">
-                    @foreach($xe as $item)
-                    <li class="span3">
-                        <a class="Ten_xe" href="xe.xe_view_all">{!! $item->Ten_xe!!}</a>
-                        <div class="thumbnails">
-                            <a href="#"></a>
-                        </div>
-                        <div class="Hang_xe">
-                            <a class="Hang_xe" href="xe.xe_view_all">{!! $item->Hang_xe!!}</a>
-                        </div>
+@extends('layer.master')
+@section('content')
 
-                        <div class="Gia">
-                            <a class="Gia" href="xe.xe_view_all">{!! $item->Gia!!}</a>
-                        </div>
+    <div class="container">
+        <ul class="thumbnails">
+            @foreach($array_xe as $xe)
+            <li class="span3">
+                <a class="Ten_xe" href="xe.xe_view_all">{{ $xe->Ten_xe }}</a>
+                <div class="thumbnails">
+                    <a href="#"></a>
+                </div>
+                <div class="Hang_xe">
+                    Hãng Xe :<a class="Hang_xe" href="xe.xe_view_all">{{ $xe->Hang_xe }}</a>
+                </div>
 
-                        <div class="Ma_loai_xe">
-                            <a class="Ma_loai_xe" href="xe.xe_view_all">{!! $item->Ma_loai_xe!!}</a>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
-            
-        </div>
-</section>
+                <div class="Gia">
+                    Giá:<a class="Gia" href="xe.xe_view_all">{{ $xe->Gia }}</a>
+                </div>
+
+                <div class="Ma_loai_xe">
+                    Loại Xe:<a class="Ma_loai_xe" href="xe.xe_view_all">{{ $xe->Ma_loai_xe }}</a>
+                </div>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+
+@endsection

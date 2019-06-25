@@ -13,7 +13,7 @@ class XeController extends Controller
         $xe       = new Xe();
         $array_xe = $xe->get_all();
 
-        return view('xe/xe_view_all',[
+        return view('xe.xe_view_all',[
             'array_xe' => $array_xe
         ]);
     }
@@ -22,7 +22,7 @@ class XeController extends Controller
         $loai_xe       = new LoaiXe();
         $array_loai_xe = $loai_xe->get_all();
         
-        return view('xe/xe_view_insert',[
+        return view('xe.xe_view_insert',[
             'array_loai_xe' => $array_loai_xe
         ]);
     }
