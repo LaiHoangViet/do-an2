@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Facades\Input;
+use App\LoaiXe;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +17,24 @@ Route::get('layer', 'Controller@layer')->name("layer");
 Route::get('the_loai', 'Controller@the_loai')->name("the_loai");
 
 
-Route::get('add', ['uses'=>'UploadController@getAdd',
-'as'=>'public.news.add']);
-Route::post('add', ['uses'=>'UploadController@postAdd',
-'as'=>'public.news.add']);
+Route::get('view_file_upload', 'Controller@view_file_upload');
+Route::post('process_file_upload', 'Controller@process_file_upload')->name('process_file_upload');
+Route::get('view', 'Controller@view');
 
 
 Route::get("ta_ca_xe", "Controller@ta_ca_xe")
 ->name("ta_ca_xe");
 
-Route::get("tim_kiem", "Controller@tim_kiem")
-->name("tim_kiem");
+Route::post('tim_kiem', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $loai_xe = loai_xe::where('Ten_loai_xe','LIKE','%'.$key.'%')->get();
+    if(count($loai_xe) > 0)
+        return view('layer.menu')->withDetails($loai_xe)->withQuery ( $key );
+    }
+    return view ('layer.menu')->withMessage('No Details found. Try to search again !');
+});
 
 Route::get("gioi_thieu", "Controller@gioi_thieu")
 ->name("gioi_thieu");

@@ -48,7 +48,7 @@ class Kernel extends HttpKernel
         ],
          'Check_khach_hang' => [
             \App\Http\Middleware\EncryptCookies::class,
-            \App\Http\Middleware\CheckAdmin::class,
+            \App\Http\Middleware\Check_khach_hang::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,

@@ -17,8 +17,8 @@
                     Giá:<a class="Gia" href="xe.xe_view_all">{{ $xe->Gia }}</a>
                 </div>
 
-                <div class="Ma_loai_xe">
-                    Loại Xe:<a class="Ma_loai_xe" href="xe.xe_view_all">{{ $xe->Ma_loai_xe }}</a>
+                <div class="Ten_loai_xe">
+                    Loại Xe:<a class="Ten_loai_xe" href="xe.xe_view_all">{{ $xe->Ten_loai_xe }}</a>
                 </div>
             </li>
             @endforeach

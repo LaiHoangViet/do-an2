@@ -23,7 +23,9 @@
    
       <li><a href="{{ route('dat_hang') }}">Đặt Xe  </a></li>
     </ul>
-      <form class="navbar-form navbar-left" action="{{ route('tim_kiem') }}" method="get">
+
+      <form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem') }}" method="post" role="Search">
+        {{csrf_field()}}
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="key">
         <div class="input-group-btn">
@@ -33,6 +35,31 @@
         </div>
       </div>
     </form>
+    <div class="container">
+    @if(isset($details))
+        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+    <h2>Sample User details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ten_loai_xe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($details as $loai_xe)
+            <tr>
+                <td>{{$loai_xe->Ma_loai_xe}}</td>
+                <td>{{$loai_xe->Ten_loai_xe}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+  </div>
+  @elseif(isset($Message))
+  <p>{{$message}}</p>
+    @endif
+</div>
+    
     <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ route('khach_hang_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
         <li><a href="{{ route('khach_hang_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

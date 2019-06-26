@@ -79,4 +79,16 @@ class Xe
 				$this->Ma_xe
 			]);
 	}
+
+	public function update_anh()
+	{
+		DB::update("update $this->table
+			set
+			Anh = ?
+			where Ma_xe = ?
+			",[
+				$this->Anh,
+				$this->Ma_xe
+		]);
+	}
 }

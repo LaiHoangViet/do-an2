@@ -15,6 +15,7 @@ use App\Model\LoaiXe;
 use DB;
 use Request;
 use Session;
+use Storage;
 
 class Controller extends BaseController
 {
@@ -70,7 +71,7 @@ class Controller extends BaseController
     		Session::put('Ma_khach_hang',$khach_hang[0]->Ma_khach_hang);
     		Session::put('Ten_dang_nhap',$khach_hang[0]->Ten_dang_nhap);
 
-    		return redirect()->route('layer');
+    		return redirect()->route('ta_ca_xe');
     	}
     	return redirect()->route('khach_hang_view_login');
     }
@@ -93,15 +94,6 @@ class Controller extends BaseController
         ]);
     }
 
-
-    public function tim_kiem(Request $request)
-    {
-        $loai_xe = loai_xe::where('Ten_loai_xe','like','%'.$request->key.'%')
-        ->orWhere('unit_price',$request->key)
-        ->get();
-        return view('tim_kiem',compact('loai_xe'));
-    }
-
     public function the_loai()
     {
         return view('layer.the_loai');
@@ -111,6 +103,30 @@ class Controller extends BaseController
     {
         return view('gioi_thieu');
     }
+
+
+    public function view_file_upload()
+    {
+        return view('view_file_upload');
+    }
+    public function process_file_upload()
+    {
+        $file = Request::file('Anh');
+        $path = Storage::disk('public')->put('',$file);
+
+        $xe =new Xe();
+        $xe->Ma_xe=1;
+        $xe->Anh=$path;
+        $xe->update_anh();
+    }
+    public function view()
+    {
+        $xe =new Xe();
+        $xe->Ma_xe=$id;
+        $xe = $xe->get_one();
+        return view('view_one',compact(xe));
+    }
+
 
 
 
