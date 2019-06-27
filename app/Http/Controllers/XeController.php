@@ -26,17 +26,36 @@ class XeController extends Controller
             'array_loai_xe' => $array_loai_xe
         ]);
     }
-    public function xe_process_insert()
+    public function xe_process_insert(Request $Request)
     {
         $xe            = new Xe();
         $xe->Ten_xe        = Request::get('Ten_xe');
-        $xe->Anh       = Request::get('Anh');
         $xe->Bien_so       = Request::get('Bien_so');
         $xe->Hang_xe       = Request::get('Hang_xe');
         $xe->Mo_ta  = Request::get('Mo_ta');
         $xe->Gia = Request::get('Gia');
         $xe->Tinh_trang = Request::get('Tinh_trang');
         $xe->Ma_loai_xe = Request::get('Ma_loai_xe');
+        
+
+        if ($Request::hasFile('Anh')) {
+            $file = Request::file('Anh');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'jpg' && $duoi !='png' && $duoi != 'jpge') {
+                return redirect()->route('xe.xe_view_insert');
+            }
+            $name = $file->getClientOriginalName();
+            $Anh= str_random(4)."_".$name;
+            while(file_exists('storage'.$Anh))
+            {
+                $Anh= str_random(4)."_".$name;
+            }
+            $file->move("storage",$Anh);
+            $xe->Anh = $Anh;
+        }
+        else{
+            $xe->Anh = "";
+        }
         $xe->insert();
 
         return redirect()->route('xe.xe_view_all');

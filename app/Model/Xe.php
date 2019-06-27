@@ -23,6 +23,13 @@ class Xe
 			join loai_xe on $this->table.Ma_loai_xe = loai_xe.Ma_loai_xe ");
 		return $array;
 	}
+	public function get_xe($Ma_loai_xe)
+	{
+		$array = DB::select("select * from $this->table where Ma_loai_xe=?,[
+			$this->Ma_loai_xe
+	]");
+		return $array;
+	}
 	public function insert()
 	{
 		DB::insert("insert into $this->table(Ten_xe,Anh,Bien_so,Hang_xe,Mo_ta,Gia,Tinh_trang,Ma_loai_xe)

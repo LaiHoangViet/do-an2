@@ -21,7 +21,8 @@
       <li><a href="{{ route('gioi_thieu') }}"><i class="pe-7s-graph"></i>Giới Thiệu</a></li>
     
    
-      <li><a href="{{ route('dat_hang') }}">Đặt Xe  </a></li>
+      <li><a href="{{ route('dat_hang') }}">Đặt Xe  </a>
+      </li>
     </ul>
 
       <form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem') }}" method="post" role="Search">
@@ -46,10 +47,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($details as $loai_xe)
+            @foreach($details as $xe)
             <tr>
-                <td>{{$loai_xe->Ma_loai_xe}}</td>
-                <td>{{$loai_xe->Ten_loai_xe}}</td>
+                <td>{{$xe->Ten_xe}}</td>
+                <td>{{$xe->Ten_loai_xe}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -61,7 +62,9 @@
 </div>
     
     <ul class="nav navbar-nav navbar-right">
+      
         <li><a href="{{ route('khach_hang_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+
         <li><a href="{{ route('khach_hang_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
   </div>

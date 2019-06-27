@@ -16,12 +16,14 @@ use DB;
 use Request;
 use Session;
 use Storage;
+use Illuminate\Support\Facades\Auth;
 
 class Controller extends BaseController
 {
     public function layer()
     {
     	return view('layer.master');
+
     }
 
     public function layerAdmin()
@@ -119,12 +121,19 @@ class Controller extends BaseController
         $xe->Anh=$path;
         $xe->update_anh();
     }
-    public function view()
+    public function view_one()
     {
         $xe =new Xe();
-        $xe->Ma_xe=$id;
+        $xe->Ma_xe=1;
         $xe = $xe->get_one();
-        return view('view_one',compact(xe));
+        return view('view_one',compact('xe'));
+    }
+
+    public function chi_tiet_xe($id)
+    {
+        $xe = DB::table('xe')->where('Ma_xe',$id)->first();
+        $Anh = DB::table('xe')->where('Ma_xe','Anh')->where('xe',$xe->Ma_xe);
+        return view('layer.chi_tiet_xe',compact('xe'));
     }
 
 

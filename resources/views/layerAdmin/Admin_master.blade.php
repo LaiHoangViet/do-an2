@@ -23,17 +23,20 @@
                         <!--header-->
             @include('layerAdmin.header_Admin')
             
-            <div class="content">
+            <div class="content" style="height: 1000px">
                 
                 <!--content-->
                 @yield('content')
+
+            </div></div>
+
 
                 <footer class="footer">
                     <!--footer-->
                 @include('layerAdmin.footer_Admin')
                                 </footer>
 
-            </div>
+            
         </div>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -33,7 +33,7 @@
         <!--header-->
         @include('layer.header')
     </div>
-    <div class="main-content" style="height: 500px">
+    <div class="main-content" style="height: 1000px">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">

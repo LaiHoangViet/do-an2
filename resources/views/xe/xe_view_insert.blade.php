@@ -9,8 +9,12 @@
 
 
 <div class="container">
-  <form action="{{ route('xe.xe_process_insert') }}" method="post">
+  <form action="{{ route('xe.xe_process_insert') }}" method="post" enctype="multipart/form-data">
+
+   
 		{{csrf_field()}}
+
+       
     
   <div class="row">
     <div class="col-25">
@@ -27,7 +31,6 @@
     </div>
     <div class="col-75">
       <input type="file" name="Anh">
-  <input type="submit" name="submit" value="upload">
     </div>
   </div>
    <div class="row">

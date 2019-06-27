@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Input;
-use App\LoaiXe;
+use App\Model\Xe;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,9 @@ Route::get('the_loai', 'Controller@the_loai')->name("the_loai");
 
 Route::get('view_file_upload', 'Controller@view_file_upload');
 Route::post('process_file_upload', 'Controller@process_file_upload')->name('process_file_upload');
-Route::get('view', 'Controller@view');
+Route::get('view_one', 'Controller@view_one');
+
+Route::get('chi_tiet_xe/{id}', 'Controller@chi_tiet_xe')->name('chi_tiet_xe');
 
 
 Route::get("ta_ca_xe", "Controller@ta_ca_xe")
@@ -29,11 +31,15 @@ Route::post('tim_kiem', function(){
 	$key = Input::get('key');
 	if ($key != "") {
 	
-	    $loai_xe = loai_xe::where('Ten_loai_xe','LIKE','%'.$key.'%')->get();
-    if(count($loai_xe) > 0)
-        return view('layer.menu')->withDetails($loai_xe)->withQuery ( $key );
+	    $xe = DB::table('xe')
+	    ->join('loai_xe','xe.Ma_loai_xe','loai_xe.Ma_loai_xe')
+	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
+	    ->orWhere('Ten_loai_xe','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($xe) > 0)
+        return view('layer.ta_ca_xe')->withDetails($xe)->withQuery ( $key );
     }
-    return view ('layer.menu')->withMessage('No Details found. Try to search again !');
+    return view ('layer.ta_ca_xe')->withMessage('No Details found. Try to search again !');
 });
 
 Route::get("gioi_thieu", "Controller@gioi_thieu")

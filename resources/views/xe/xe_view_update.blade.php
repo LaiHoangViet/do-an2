@@ -88,7 +88,7 @@ input[type=submit]:hover {
 				<label for="fname">Ảnh</label>
 			</div>
 			<div class="col-75">
-				<input type="text" id="fname" name="Anh" value="{{$xe->Anh}}">
+				<input type="file" id="fname" name="Anh" value="{{$xe->Anh}}">
 			</div>
   		</div>
 
