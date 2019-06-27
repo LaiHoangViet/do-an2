@@ -22,7 +22,7 @@
 				
 				<div class="row">
 					<div class="col-sm-4">
-						<img width="200px" src="storage/{{$xe->Anh}}" alt="">
+						<img class="img-responsive" width="500px" src="storage/{{$xe->Anh}}" >
 					</div>
 					<div class="col-sm-8">
 						<div class="single-item-body">

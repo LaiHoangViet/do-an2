@@ -1,11 +1,4 @@
 @extends('layerAdmin.Admin_master')
-<style type="text/css">
-	.container{
-		background-color: #FFFAF0;
-		width: 100%;
-		height: 500px;
-	}
-</style>
 @section('content')
 
 <div class="container">
@@ -17,7 +10,7 @@
 		</button>
 	</a><br><br>
 	
-	<table border="0" width="100%">
+	<table border="1" width="100%">
 		<tr>
 			<th>Tên Đăng Nhập</th>
 			<th>Mật Khẩu</th>
@@ -26,7 +19,6 @@
 			<th>Số Điện Thoại</th>
 			<th>Địa Chỉ</th>
 			<th>Email</th>
-			<th></th>
 		</tr>
 		@foreach ($array_Admin as $Admin)
 			<tr>

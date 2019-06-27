@@ -1,43 +1,50 @@
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>repl.it</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <link rel="stylesheet" href="https://darkceptor44.000webhostapp.com/assets/css/light-bootstrap-dashboard.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link href="https://darkceptor44.000webhostapp.com/assets/css/dark-bootstrap-dashboard.css" rel="stylesheet" type="text/css" />
+    <title></title>
 
-    <link href="{{asset('css/admin.css')}}" rel="stylesheet" />
-
-    
-  </head>
-  <body>
-     <div class="wrapper">
-        <!--menu-->
-        @include('layerAdmin.menu_Admin')
-
-                    <div class="main-panel">
-                        <!--header-->
-            @include('layerAdmin.header_Admin')
-            
-            <div class="content" style="height: 1000px">
-                
-                <!--content-->
-                @yield('content')
-
-            </div></div>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
 
-                <footer class="footer">
-                    <!--footer-->
-                @include('layerAdmin.footer_Admin')
-                                </footer>
+    <!-- Bootstrap core CSS     -->
+    <link href="{{asset('css/menu.css')}}" rel="stylesheet" />
 
-            
+
+
+
+    <!--     Fonts and icons     -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="wrapper">
+    <!--menu-->
+    @include('layerAdmin.menu_Admin')
+
+    <div class="main-panel">
+    </div>
+    <div class="main-content" style="height: 1000px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    @yield('content')
+                    <!--content-->
+                   
+                 
+                </div>
+            </div>
         </div>
+    </div>
+    <!--footer-->
+     @include('layerAdmin.footer_Admin')
+</div>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>

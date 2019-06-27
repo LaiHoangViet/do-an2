@@ -1,6 +1,10 @@
 @extends('layer.master')
 @section('content')
 
+@foreach($array_xe as  $xe)
+{{ $xe->Ten_xe }}
+@endforeach
+{{ $xe->links() }}
     <div class="container">
         <table border="0px " width="100%" height="150px" cellspacing="100px" style="margin-bottom:100px">
             <tr>

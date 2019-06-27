@@ -12,6 +12,7 @@ use App\Model\Xe;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('pagination', 'Controller@phan_trang');
 
 Route::get('layer', 'Controller@layer')->name("layer");
 Route::get('the_loai', 'Controller@the_loai')->name("the_loai");

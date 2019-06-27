@@ -136,6 +136,11 @@ class Controller extends BaseController
         return view('layer.chi_tiet_xe',compact('xe'));
     }
 
+    public function phan_trang(){
+        $array_xe = xe::paginate(5);
+        return view('layer.ta_ca_xe',['xe'=>$xe]);
+ }
+
 
 
 
