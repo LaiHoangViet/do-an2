@@ -1,16 +1,7 @@
-<header class="masthead" style="background-image: url(http://pngimg.com/uploads/dodge/dodge_PNG90.png); height: 400px; width: 1500px; border: 0px solid black;>
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <hl class="text-secondary text-center>Sean Smith</h1>
-      </div>
-      <div class="col-sm-6">
-        <div class="pull-right  hidden-xs">    
-        
-         
-          </ul>
-        </div>
+  <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
+        <a href="{{ route('ta_ca_xe') }}" class="btn btn-primary js-scroll-trigger">Get Started</a>
       </div>
     </div>
-    </div>
-</header>

@@ -1,10 +1,5 @@
 @extends('layerAdmin.Admin_master')
-<style type="text/css">
-	.container{
-		color: #FFFFFF;
-		height: 3000px;
-	}
-</style>
+
 @section('content')
 
 <div class="container">

@@ -1,66 +1,75 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="../assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+  <title>Grayscale - Start Bootstrap Theme</title>
 
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS     -->
-    <link href="{{asset('css/menu.css')}}" rel="stylesheet" />
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-
-
-
-    <!--     Fonts and icons     -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
+   <link href="{{asset('css/grayscale.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/grayscale.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap-grid.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap-grid.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap-reboot.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap-reboot.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/grayscale.js')}}" rel="stylesheet" />
+  <link href="{{asset('css/grayscale.min.js')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.bundle.js')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.bundle.min.js')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.js')}}" rel="stylesheet" />
+  <link href="{{asset('css/bootstrap.min.js')}}" rel="stylesheet" />
 
 </head>
-<body>
 
-<div class="wrapper">
-	<!--menu-->
-	@include('layer.menu')
+<body id="page-top">
 
-    <div class="main-panel">
-        <!--header-->
-        @include('layer.header')
-    </div>
-    <div class="main-content" style="height: 1000px">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    @yield('content')
-                    <!--content-->
-                    
-                 
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--footer-->
-     @include('layer.footer')
-</div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <!--menu-->
+    @include('layer.menu')
+  </nav>
 
+  <!-- Header -->
+  <header class="masthead">
+  <!--header-->
+  @include('layer.header')
+  </header>
+
+  <!-- About Section -->
+  <!--content-->
+  @yield('content')
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+@include('layer.footer')
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
 
 </body>
-    <!--   Core JS Files  -->
-    <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-
-
-	
-
-    <!-- Light Bootstrap Dashboard Core javascript and methods -->
-	<script src="../assets/js/light-bootstrap-dashboard.js?v=1.4.1"></script>
-
 
 </html>

@@ -73,7 +73,7 @@ class Controller extends BaseController
     		Session::put('Ma_khach_hang',$khach_hang[0]->Ma_khach_hang);
     		Session::put('Ten_dang_nhap',$khach_hang[0]->Ten_dang_nhap);
 
-    		return redirect()->route('ta_ca_xe');
+    		return redirect()->route('layer');
     	}
     	return redirect()->route('khach_hang_view_login');
     }
