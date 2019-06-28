@@ -10,7 +10,8 @@ $secondaryText: #eee;
 $blackColor: #888888;
 $borderColor: transparent;
 $formControlColor: transparent;
-
+.body{
+  height: 3000px;
 .wrapper{
   .main-panel{
     background: $bg;
@@ -48,4 +49,5 @@ $formControlColor: transparent;
   .form-control, .form-control:focus{
     background-color: $formControlColor;
   }
+}
 }

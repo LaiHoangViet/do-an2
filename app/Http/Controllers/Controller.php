@@ -136,10 +136,17 @@ class Controller extends BaseController
         return view('layer.chi_tiet_xe',compact('xe'));
     }
 
-    public function phan_trang(){
-        $array_xe = xe::paginate(5);
-        return view('layer.ta_ca_xe',['xe'=>$xe]);
- }
+    public function gio_hang()
+    {
+        $xe = new Xe();
+        $xe->Ten_xe = Request::get('Ten_xe');
+        $xe->Anh = Request::get('Anh');
+        $xe->Gia= Request::get('Gia');
+        $xe->Tong_tien= Request::get('Tong_tien');
+        return view('gio_hang');
+    }
+
+
 
 
 

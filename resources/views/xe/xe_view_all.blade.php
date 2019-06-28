@@ -1,5 +1,10 @@
 @extends('layerAdmin.Admin_master')
-
+<style type="text/css">
+	.container{
+		color: #FFFFFF;
+		height: 3000px;
+	}
+</style>
 @section('content')
 
 <div class="container">
@@ -10,7 +15,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="1" width="80%" bgcolor="CCFF66">
+	<h1><center><table border="1" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Tên Xe</th>
 			<th>Ảnh</th>
@@ -29,7 +34,7 @@
 					{{$xe->Ten_xe}}
 				</td>
 				<td>
-					<img width="100px" src="storage/{{$xe->Anh}}" >
+					<img width="100px" src="../storage/{{$xe->Anh}}" >
 				</td>
 				<td>
 					{{$xe->Bien_so}}
@@ -65,6 +70,6 @@
 				</td>
 			</tr>
 		@endforeach
-	</table></center>
+	</table></center></h1>
 </div>
 @endsection

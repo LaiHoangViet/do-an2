@@ -55,10 +55,10 @@
 
   <div class="row">
     <div class="col-25">
-      <label for="lname">CMTND</label>
+      <label for="lname">Tên người nhận</label>
     </div>
     <div class="col-75">
-      <input class="input" type="text" id="lname" name="So_CMT" placeholder="1000..">
+      <input class="input" type="text" id="lname" name="Ten_Nguoi_nhan" placeholder="1000..">
     </div>
   </div>
 
@@ -67,7 +67,7 @@
       <label for="lname">Số Điện Thoại</label>
     </div>
     <div class="col-75">
-      <input class="input" type="text" id="lname" name="Sdt" placeholder="10214..">
+      <input class="input" type="text" id="lname" name="Sdt_Nguoi_nhan" placeholder="10214..">
     </div>
   </div>
 
@@ -76,26 +76,17 @@
       <label for="lname">Địa Chỉ</label>
     </div>
     <div class="col-75">
-      <input class="input" type="text" id="lname" name="Dia_chi" placeholder="Địa Chỉ..">
+      <input class="input" type="text" id="lname" name="Dc_Nguoi_nhan" placeholder="Địa Chỉ..">
     </div>
   </div>
 
 
   <div class="row">
     <div class="col-25">
-      <label for="lname">Số Tài Khoản</label>
+      <label for="lname">Tổng tiền</label>
     </div>
     <div class="col-75">
-      <input class="input" type="text" id="lname" name="So_TK" placeholder="012..">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-25">
-      <label for="lname">Tên Ngân Hàng</label>
-    </div>
-    <div class="col-75">
-      <input class="input" type="text" id="lname" name="Ngan_hang" placeholder="Tên Ngân Hàng..">
+      <input class="input" type="text" id="lname" name="Tong_tien" placeholder="012..">
     </div>
   </div>
 

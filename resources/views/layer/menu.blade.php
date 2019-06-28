@@ -62,10 +62,16 @@
 </div>
     
     <ul class="nav navbar-nav navbar-right">
-      
-        <li><a href="{{ route('khach_hang_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+      @if(Session::has('Ma_khach_hang'))
+      @else
+        <li><a href="{{ route('khach_hang_view_login') }}"><span class="glyphicon glyphicon-user"></span> Login</a>
+        </li>
+        @endif
 
+      @if(Session::has('Ma_khach_hang'))
         <li><a href="{{ route('khach_hang_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      @else
+      @endif
       </ul>
   </div>
 </nav>

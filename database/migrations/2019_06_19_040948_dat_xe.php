@@ -22,11 +22,11 @@ class DatXe extends Migration
             $table->integer('Ma_xe')->unsigned();
             $table->foreign('Ma_xe')->references('Ma_xe')->on('xe');
 
-            $table->string('So_CMT',50);
-            $table->string('Sdt',11);
-            $table->string('Dia_chi',50);
-            $table->string('So_TK',50);
-            $table->string('Ngan_hang',50);
+            
+            $table->string('Ten_Nguoi_nhan');
+            $table->string('Sdt_Nguoi_nhan');
+            $table->string('Dc_Nguoi_nhan');
+            $table->string('Tong_tien');
             $table->date('Ngay_lay');
             $table->date('Ngay_tra');
             

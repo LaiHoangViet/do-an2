@@ -16,11 +16,10 @@
 			<th>Ngày Đặt</th>
 			<th>Tên Khách Hàng</th>
 			<th>Tên Xe</th>
-			<th>CMTND</th>
+			<th>Tên người nhận </th>
 			<th>Số Điện Thoại</th>
 			<th>Địa Chỉ</th>
-			<th>Số Tài Khoản</th>
-			<th>Tên Ngân Hàng </th>
+			<th>Tổng tiền </th>
 			<th>Ngày Lấy</th>
 			<th>Ngày Trả</th>
 
@@ -40,23 +39,19 @@
 				</td>
 
 				<td>
-					{{$dat_xe->So_CMT}}
+					{{$dat_xe->Ten_Nguoi_nhan}}
 				</td>
 
 				<td>
-					{{$dat_xe->Sdt}}
-				</td>
-
-				<td>
-					{{$dat_xe->Dia_chi}}
-				</td>
-
-				<td>
-					{{$dat_xe->So_TK}}
+					{{$dat_xe->Sdt_Nguoi_nhan}}
 				</td>
 				
 				<td>
-					{{$dat_xe->Ngan_hang}}
+					{{$dat_xe->Dc_Nguoi_nhan}}
+				</td>
+				
+				<td>
+					{{$dat_xe->Tong_tien}}
 				</td>
 
 				<td>
