@@ -10,11 +10,10 @@ class DatXe
     public $Ngay;
     public $Ma_khach_hang;
     public $Ma_xe;
-    public $So_CMT;
-    public $Sdt;
-    public $Dia_chi;
-    public $So_TK;
-    public $Ngan_hang;
+    public $Ten_Nguoi_nhan;
+    public $Sdt_Nguoi_nhan;
+    public $Dc_Nguoi_nhan;
+    public $Tong_tien;
     public $Ngay_lay;
     public $Ngay_tra;
     
@@ -27,16 +26,15 @@ class DatXe
     }
     public function insert()
     {
-        DB::insert("insert into $this->table(Ngay,Ma_khach_hang,Ma_xe,So_CMT,Sdt,Dia_chi,So_TK,Ngan_hang,Ngay_lay,Ngay_tra)
-            values(?,?,?,?,?,?,?,?,?,?)",[
+        DB::insert("insert into $this->table(Ngay,Ma_khach_hang,Ma_xe,Ten_Nguoi_nhan,Sdt_Nguoi_nhan,Dc_Nguoi_nhan,Tong_tien,Ngay_lay,Ngay_tra)
+            values(?,?,?,?,?,?,?,?,?)",[
                 $this->Ngay,
                 $this->Ma_khach_hang,
                 $this->Ma_xe,
-                $this->So_CMT,
-                $this->Sdt,
-                $this->Dia_chi,
-                $this->So_TK,
-                $this->Ngan_hang,
+                $this->Ten_Nguoi_nhan,
+                $this->Sdt_Nguoi_nhan,
+                $this->Dc_Nguoi_nhan,
+                $this->Tong_tien,
                 $this->Ngay_lay,
                 $this->Ngay_tra,
                 

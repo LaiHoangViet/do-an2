@@ -37,11 +37,10 @@ class DatXeController extends Controller
         $dat_xe->Ngay = Request::get('Ngay');
         $dat_xe->Ma_khach_hang = Request::get('Ma_khach_hang');
         $dat_xe->Ma_xe = Request::get('Ma_xe');
-        $dat_xe->So_CMT = Request::get('So_CMT');
-        $dat_xe->Sdt = Request::get('Sdt');
-        $dat_xe->Dia_chi = Request::get('Dia_chi');
-        $dat_xe->So_TK = Request::get('So_TK');
-        $dat_xe->Ngan_hang = Request::get('Ngan_hang');
+        $dat_xe->Ten_Nguoi_nhan = Request::get('Ten_Nguoi_nhan');
+        $dat_xe->Sdt_Nguoi_nhan = Request::get('Sdt_Nguoi_nhan');
+        $dat_xe->Dc_Nguoi_nhan = Request::get('Dc_Nguoi_nhan');
+        $dat_xe->Tong_tien = Request::get('Tong_tien');
         $dat_xe->Ngay_lay = Request::get('Ngay_lay');
         $dat_xe->Ngay_tra = Request::get('Ngay_tra');
         $dat_xe->insert();

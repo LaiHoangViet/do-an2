@@ -3,30 +3,30 @@
 
 
     <div class="container">
-        <table border="0px " width="100%" height="150px" cellspacing="100px" style="margin-bottom:100px">
+        <ul>
             <tr>
             @foreach($array_xe as $xe)
-            <td>
-                <a class="Ten_xe" href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}">{{ $xe->Ten_xe }}</a>
+            <li>
+                <h1><b><a class="Ten_xe" href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}">{{ $xe->Ten_xe }}</a></b></h1>
                 
                 <div class="thumbnails">
-                    <a href="#"><img width="200px" src="storage/{{$xe->Anh}}" alt=""></a>
+                    <a href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}"><img width="700px" src="storage/{{$xe->Anh}}" alt=""></a>
                 </div>
-                <div class="Hang_xe">
-                    Hãng Xe :<a class="Hang_xe" href="#">{{ $xe->Hang_xe }}</a>
+                <b><div class="Hang_xe">
+                    Hãng Xe :<a class="Hang_xe" href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}">{{ $xe->Hang_xe }}</a>
                 </div>
 
                 <div class="Gia">
-                    Giá:<a class="Gia" href="#">{{ $xe->Gia }}</a>
+                    Giá:<a class="Gia" href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}">{{ $xe->Gia }}</a>
                 </div>
 
                 <div class="Ten_loai_xe">
-                    Loại Xe:<a class="Ten_loai_xe" href="#">{{ $xe->Ten_loai_xe }}</a>
-                </div>
+                    Loại Xe:<a class="Ten_loai_xe" href="{{ route('chi_tiet_xe', ['id' => $xe->Ma_xe]) }}">{{ $xe->Ten_loai_xe }}</a>
+                </div></b>
             </li>
             @endforeach
-            </td>
-        </table>
+            
+        </ul>
         
     </div>
 

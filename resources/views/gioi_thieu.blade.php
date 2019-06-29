@@ -4,7 +4,7 @@
 
 
 <div class="container">
-AsCar – website cho thuê xe hàng đầu Việt Nam
+<b>AsCar – website cho thuê xe hàng đầu Việt Nam
 <br><br>
  Chúng tôi cung cấp các dịch vụ cho thuê xe dài ngày, ngắn ngàychuyên nghiệp, phục vụ đa
 <br>
@@ -27,6 +27,6 @@ Văn phòng giao dịch tại Hà Nội của AsCar:
 Địa chỉ: Phường Bách Khoa – Hai Bà Trưng, Hà Nội<br>
 Điện thoại: 0978.188.099 – 0912.300.505<br>
 Email: leuyen18111999@gmail.com<br>
-
+</b>
 	</div>
 @endsection

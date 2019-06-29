@@ -23,7 +23,9 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<img class="img-responsive" width="500px" src="../storage/{{$xe->Anh}}" >
-					</div>
+						
+
+					</div></div>
 					<div class="col-sm-8">
 						<div class="single-item-body">
 							<p class="single-item-title"><b>Biển Số:</b> {{$xe->Bien_so}}</p>
@@ -39,4 +41,19 @@
 		</div>
 	</div>
 </div>
+
+<table>
+	<tr>
+		<td>
+			@if(Session::has('Ma_khach_hang'))
+			<a href="{{ route('dat_hang') }}">
+		<button>
+			Đặt Xe
+		</button></a>
+      @else
+        
+        @endif
+		</td>
+	</tr>
+</table>
 @endsection

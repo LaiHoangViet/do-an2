@@ -136,19 +136,33 @@ class Controller extends BaseController
         return view('layer.chi_tiet_xe',compact('xe'));
     }
 
-    public function gio_hang()
+    public function dat_hang()
     {
-        $xe = new Xe();
-        $xe->Ten_xe = Request::get('Ten_xe');
-        $xe->Anh = Request::get('Anh');
-        $xe->Gia= Request::get('Gia');
-        $xe->Tong_tien= Request::get('Tong_tien');
-        return view('gio_hang');
+         $khach_hang       = new KhachHang();
+        $array_khach_hang = $khach_hang->get_all();
+        $xe       = new Xe();
+        $array_xe = $xe->get_all();
+
+        return view('dat_hang',[
+            'array_xe' => $array_xe,
+            'array_khach_hang' => $array_khach_hang
+        ]);
     }
+    public function process_dat_hang()
+    {
+        $dat_xe = new DatXe();
+        $dat_xe->Ngay = Request::get('Ngay');
+        $dat_xe->Ma_khach_hang = Request::get('Ma_khach_hang');
+        $dat_xe->Ma_xe = Request::get('Ma_xe');
+        $dat_xe->Ten_Nguoi_nhan = Request::get('Ten_Nguoi_nhan');
+        $dat_xe->Sdt_Nguoi_nhan = Request::get('Sdt_Nguoi_nhan');
+        $dat_xe->Dc_Nguoi_nhan = Request::get('Dc_Nguoi_nhan');
+        $dat_xe->Tong_tien = Request::get('Tong_tien');
+        $dat_xe->Ngay_lay = Request::get('Ngay_lay');
+        $dat_xe->Ngay_tra = Request::get('Ngay_tra');
+        $dat_xe->insert();
 
-
-
-
-
+        return redirect()->route('layer');
+    }
 
 }

@@ -6,41 +6,60 @@
 <body>
 	<div class="container">  
 	  <form id="contact" action="{{route('process_dat_hang')}}" method="post">
-	    <h3>Đặt hàng </h3>
+	  	{{csrf_field()}}
+	    <h3>Đặt xe </h3>
 	    <h4>Please fill in contact below...</h4>
 
 	    <fieldset>
 	      <input placeholder="Ngày Đặt" type="date" name="Ngay" tabindex="1" required autofocus>
 	    </fieldset>
 
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Tên Khách Hàng</label>
+    </div>
+    <div class="col-75">
+      </label>
+      <select class="form-control" name="Ma_khach_hang">
+        @foreach ($array_khach_hang as $khach_hang)
+          <option value="{{$khach_hang->Ma_khach_hang}}">
+            {{$khach_hang->Ho_ten}}
+          </option>
+        @endforeach
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Tên Xe</label>
+    </div>
+    <div class="col-75">
+      </label>
+      <select class="form-control" name="Ma_xe">
+        @foreach ($array_xe as $xe)
+          <option value="{{$xe->Ma_xe}}">
+            {{$xe->Ten_xe}}
+          </option>
+        @endforeach
+      </select>
+    </div>
+  </div>
+
 	    <fieldset>
-	      <input placeholder="Khách Hàng" type="text" name="Ho_ten" tabindex="1" required autofocus>
-	       
+	      <input placeholder="Người nhận" type="text" name="Ten_Nguoi_nhan" tabindex="1" required autofocus>
 	    </fieldset>
 
 	    <fieldset>
-	      <input placeholder="Xe" type="text" name="Ten_xe" tabindex="1" required autofocus>
-
+	      <input placeholder="Số Điện Thoại" type="number" name="Sdt_Nguoi_nhan" tabindex="1" required autofocus>
 	    </fieldset>
 
 	    <fieldset>
-	      <input placeholder="CMTND" type="text" name="So_CMT" tabindex="1" required autofocus>
+	      <input placeholder="Địa Chỉ" type="text" name="Dc_Nguoi_nhan" tabindex="1" required autofocus>
 	    </fieldset>
 
 	    <fieldset>
-	      <input placeholder="Số Điện Thoại" type="number" name="Sdt" tabindex="1" required autofocus>
-	    </fieldset>
-
-	    <fieldset>
-	      <input placeholder="Địa Chỉ" type="text" name="Dia_chi" tabindex="1" required autofocus>
-	    </fieldset>
-
-	    <fieldset>
-	      <input placeholder="Số Tài Khoản" type="text" name="So_TK" tabindex="1" required autofocus>
-	    </fieldset>
-
-	    <fieldset>
-	      <input placeholder="Tên Ngân Hàng" type="text" name="Ngan_hang" tabindex="1" required autofocus>
+	      <input placeholder="Tổng tiền " type="text" name="Tong_tien" tabindex="1" required autofocus>
 	    </fieldset>
 
 	    <fieldset>
