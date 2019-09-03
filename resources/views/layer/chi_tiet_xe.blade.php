@@ -46,7 +46,7 @@
 	<tr>
 		<td>
 			@if(Session::has('Ma_khach_hang'))
-			<a href="{{ route('dat_hang') }}">
+			<a href="{{ route('dat_hang', ['ma_xe' => $xe->Ma_xe]) }}">
 		<button>
 			Đặt Xe
 		</button></a>

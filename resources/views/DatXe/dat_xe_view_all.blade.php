@@ -4,6 +4,41 @@
 
 <div class="container">
 
+	<form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_dx') }}" method="post" role="Search">
+        {{csrf_field()}}
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="key">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="container">
+    @if(isset($details))
+        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+    <h2>Sample User details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên người nhận</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($details as $dat_xe)
+            <tr>
+                <td>{{$dat_xe->Ten_Nguoi_nhan}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+  </div>
+  @elseif(isset($Message))
+  <p>{{$message}}</p>
+    @endif
+</div>
+
 	<center><h1>Danh sách đặt xe</h1></center>
 	<center><a href="{{ route('dat_xe.dat_xe_view_insert') }}">
 		<button>
@@ -11,7 +46,7 @@
 		</button>
 	</a></center><br>
 	
-	<center><table border="0" width="80%" bgcolor="CCFF66">
+	<center><table border="1" width="80%" bgcolor="CCFF66">
 		<tr>
 			<th>Ngày Đặt</th>
 			<th>Tên Khách Hàng</th>

@@ -2,6 +2,42 @@
 @section('content')
 
 <div class="container">
+
+		<form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_admin') }}" method="post" role="Search">
+        {{csrf_field()}}
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="key">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="container">
+    @if(isset($details))
+        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+    <h2>Sample User details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên đăng nhập</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($details as $Admin)
+            <tr>
+                <td>{{$Admin->Ten_dang_nhap}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+  </div>
+  @elseif(isset($Message))
+  <p>{{$message}}</p>
+    @endif
+</div>
+
 <center>
 	<h1>Danh sách Admin</h1>
 	<a href="{{ route('Admin.Admin_view_insert') }}">

@@ -3,6 +3,7 @@
 
 
     <div class="container">
+        
         <ul>
             <tr>
             @foreach($array_xe as $xe)

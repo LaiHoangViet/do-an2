@@ -12,6 +12,7 @@ use App\Model\KhachHangLogin;
 use App\Model\KhachHang;
 use App\Model\Xe;
 use App\Model\LoaiXe;
+use App\Model\DatXe;
 use DB;
 use Request;
 use Session;
@@ -136,16 +137,16 @@ class Controller extends BaseController
         return view('layer.chi_tiet_xe',compact('xe'));
     }
 
-    public function dat_hang()
+    public function dat_hang($ma_xe)
     {
-         $khach_hang       = new KhachHang();
-        $array_khach_hang = $khach_hang->get_all();
-        $xe       = new Xe();
-        $array_xe = $xe->get_all();
+        $ma_khach_hang = Session::get('Ma_khach_hang');
+        $ten_dang_nhap = Session::get('Ten_dang_nhap');
+        $xe = DB::table('xe')->where('Ma_xe', $ma_xe)->first();
 
         return view('dat_hang',[
-            'array_xe' => $array_xe,
-            'array_khach_hang' => $array_khach_hang
+            'xe' => $xe,
+            'ma_khach_hang' => $ma_khach_hang,
+            'ten_dang_nhap' => $ten_dang_nhap
         ]);
     }
     public function process_dat_hang()
@@ -162,7 +163,9 @@ class Controller extends BaseController
         $dat_xe->Ngay_tra = Request::get('Ngay_tra');
         $dat_xe->insert();
 
-        return redirect()->route('layer');
+        return redirect()->route('ta_ca_xe');
     }
+
+
 
 }

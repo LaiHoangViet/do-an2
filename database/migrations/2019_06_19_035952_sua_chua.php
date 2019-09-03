@@ -14,14 +14,13 @@ class SuaChua extends Migration
     public function up()
     {
          Schema::create('sua_chua', function (Blueprint $table) {
-            
+            $table->increments('Ma_sua_chua');
             $table->date('Ngay_sua');
             $table->integer('Ma_xe')->unsigned();
             $table->foreign('Ma_xe')->references('Ma_xe')->on('xe');
             $table->string('Tinh_trang');
             $table->date('Ngay_sua_xong');
             $table->string('Chi_phi');
-            $table->primary(['Ngay_sua','Ma_xe']);
         });
     }
 

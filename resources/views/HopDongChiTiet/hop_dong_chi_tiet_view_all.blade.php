@@ -12,7 +12,7 @@
 		</button>
 	</a><br><br>
 	
-	<table border="0" width="100%">
+	<table border="1" width="100%">
 		<tr>
 			<th>Hợp Đồng</th>
 			<th>Xe</th>

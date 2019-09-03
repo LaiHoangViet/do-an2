@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Input;
 use App\Model\Xe;
+use App\Model\KhachHang;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,21 +35,105 @@ Route::post('tim_kiem', function(){
 	$key = Input::get('key');
 	if ($key != "") {
 	
-	    $xe = DB::table('xe')
+	    $array_xe = DB::table('xe')
 	    ->join('loai_xe','xe.Ma_loai_xe','loai_xe.Ma_loai_xe')
 	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
 	    ->orWhere('Ten_loai_xe','LIKE','%'.$key.'%')
 	    ->get();
-    if(count($xe) > 0)
-        return view('layer.ta_ca_xe')->withDetails($xe)->withQuery ( $key );
+    if(count($array_xe) > 0)
+        return view('layer.ta_ca_xe', ['array_xe' => $array_xe])->withQuery($key);
     }
-    return view ('layer.ta_ca_xe')->withMessage('No Details found. Try to search again !');
+    return view('layer.ta_ca_xe')->withMessage('No Details found. Try to search again !');
 });
+
+Route::post('tim_kiem_kh', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_khach_hang = DB::table('khach_hang')
+	    ->orWhere('Ten_dang_nhap','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_khach_hang) > 0)
+        return view('KhachHang.khach_hang_view_all', ['array_khach_hang' => $array_khach_hang])->withQuery ( $key );
+    }
+    return view ('KhachHang.khach_hang_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_admin', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_Admin = DB::table('admin')
+	    ->orWhere('Ten_dang_nhap','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_Admin) > 0)
+        return view('Admin.Admin_view_all', ['array_Admin' => $array_Admin])->withQuery ( $key );
+    }
+    return view ('Admin.Admin_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_lx', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_loai_xe = DB::table('loai_xe')
+	    ->orWhere('Ten_loai_xe','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_loai_xe) > 0)
+        return view('LoaiXe.loai_xe_view_all', ['array_loai_xe' => $array_loai_xe])->withQuery ( $key );
+    }
+    return view ('LoaiXe.loai_xe_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_xe', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_xe = DB::table('xe')
+	    ->join('loai_xe','xe.Ma_loai_xe','loai_xe.Ma_loai_xe')
+	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
+	    ->orWhere('Ten_loai_xe','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_xe) > 0)
+        return view('xe.xe_view_all', ['array_xe' => $array_xe])->withQuery ( $key );
+    }
+    return view ('xe.xe_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_sc', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_sua_chua = DB::table('sua_chua')
+	    ->join('xe','sua_chua.Ma_xe','xe.Ma_xe')
+	    ->orWhere('Ngay_sua','LIKE','%'.$key.'%')
+	    ->orWhere('Ma_xe','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_sua_chua) > 0)
+        return view('sua_chua.sua_chua_view_all', ['array_sua_chua' => $array_sua_chua])->withQuery($key);
+    }
+    return view('sua_chua.sua_chua_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_dx', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_dat_xe = DB::table('dat_xe')
+	    ->orWhere('Ten_Nguoi_nhan','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_dat_xe) > 0)
+        return view('DatXe.dat_xe_view_all', ['array_dat_xe' => $array_dat_xe])->withQuery ( $key );
+    }
+    return view ('DatXe.dat_xe_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+
 
 Route::get("gioi_thieu", "Controller@gioi_thieu")
 ->name("gioi_thieu");
 
-Route::get("dat_hang", "Controller@dat_hang")
+Route::get("dat_hang/{ma_xe}", "Controller@dat_hang")
 ->name("dat_hang");
 Route::post("process_dat_hang", "Controller@process_dat_hang")
 ->name("process_dat_hang");
