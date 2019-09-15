@@ -107,12 +107,27 @@ Route::post('tim_kiem_sc', function(){
 	    $array_sua_chua = DB::table('sua_chua')
 	    ->join('xe','sua_chua.Ma_xe','xe.Ma_xe')
 	    ->orWhere('Ngay_sua','LIKE','%'.$key.'%')
-	    ->orWhere('Ma_xe','LIKE','%'.$key.'%')
+	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
 	    ->get();
     if(count($array_sua_chua) > 0)
-        return view('sua_chua.sua_chua_view_all', ['array_sua_chua' => $array_sua_chua])->withQuery($key);
+        return view('SuaChua.sua_chua_view_all', ['array_sua_chua' => $array_sua_chua])->withQuery($key);
     }
-    return view('sua_chua.sua_chua_view_all')->withMessage('No Details found. Try to search again !');
+    return view('SuaChua.sua_chua_view_all')->withMessage('No Details found. Try to search again !');
+});
+
+Route::post('tim_kiem_hd', function(){
+	$key = Input::get('key');
+	if ($key != "") {
+	
+	    $array_hop_dong = DB::table('hop_dong')
+	    ->join('khach_hang','hop_dong.Ma_khach_hang','khach_hang.Ma_khach_hang')
+	    ->orWhere('Ngay','LIKE','%'.$key.'%')
+	    ->orWhere('Ho_ten','LIKE','%'.$key.'%')
+	    ->get();
+    if(count($array_hop_dong) > 0)
+        return view('HopDong.hop_dong_view_all', ['array_hop_dong' => $array_hop_dong])->withQuery($key);
+    }
+    return view('HopDong.hop_dong_view_all')->withMessage('No Details found. Try to search again !');
 });
 
 Route::post('tim_kiem_dx', function(){
@@ -120,12 +135,15 @@ Route::post('tim_kiem_dx', function(){
 	if ($key != "") {
 	
 	    $array_dat_xe = DB::table('dat_xe')
-	    ->orWhere('Ten_Nguoi_nhan','LIKE','%'.$key.'%')
+	    ->join('khach_hang','dat_xe.Ma_khach_hang','khach_hang.Ma_khach_hang')
+	    ->join('xe','dat_xe.Ma_xe','xe.Ma_xe')
+	    ->orWhere('Ho_ten','LIKE','%'.$key.'%')
+	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
 	    ->get();
     if(count($array_dat_xe) > 0)
-        return view('DatXe.dat_xe_view_all', ['array_dat_xe' => $array_dat_xe])->withQuery ( $key );
+        return view('DatXe.dat_xe_view_all', ['array_dat_xe' => $array_dat_xe])->withQuery($key);
     }
-    return view ('DatXe.dat_xe_view_all')->withMessage('No Details found. Try to search again !');
+    return view('DatXe.dat_xe_view_all')->withMessage('No Details found. Try to search again !');
 });
 
 
@@ -137,6 +155,12 @@ Route::get("dat_hang/{ma_xe}", "Controller@dat_hang")
 ->name("dat_hang");
 Route::post("process_dat_hang", "Controller@process_dat_hang")
 ->name("process_dat_hang");
+
+
+Route::get("hop_dong/{Ma_khach_hang}", "Controller@hop_dong")
+->name("hop_dong");
+Route::post("process_hop_dong", "Controller@process_hop_dong")
+->name("process_hop_dong");
 
 
 Route::get("Admin_view_login", "Controller@Admin_view_login")
@@ -271,26 +295,6 @@ Route::group(['prefix' => 'hop_dong'],function(){
 
 	Route::get('hop_dong_delete/{id}', 'HopDongController@hop_dong_delete')
 	->name('hop_dong.hop_dong_delete');
-});
-
-Route::group(['prefix' => 'hop_dong_chi_tiet'],function(){
-	Route::get('', 'HopDongChiTietController@hop_dong_chi_tiet_view_all')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_view_all');
-
-	Route::get('hop_dong_chi_tiet_view_insert', 'HopDongChiTietController@hop_dong_chi_tiet_view_insert')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_view_insert');
-
-	Route::post('hop_dong_chi_tiet_process_insert', 'HopDongChiTietController@hop_dong_chi_tiet_process_insert')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_process_insert');
-
-	Route::get('hop_dong_chi_tiet_view_update/{id}', 'HopDongChiTietController@hop_dong_chi_tiet_view_update')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_view_update');
-	
-	Route::post('hop_dong_chi_tiet_process_update/{id}', 'HopDongChiTietController@hop_dong_chi_tiet_process_update')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_process_update');
-
-	Route::get('hop_dong_chi_tiet_delete/{id}', 'HopDongChiTietController@hop_dong_chi_tiet_delete')
-	->name('hop_dong_chi_tiet.hop_dong_chi_tiet_delete');
 });
 
 

@@ -10,7 +10,6 @@
           <li><a href="{{ route('dat_xe.dat_xe_view_all') }}">Quản lí đặt xe </a></li>
           <li><a href="{{ route('sua_chua.sua_chua_view_all') }}">Quản lí sửa chữa </a></li>
           <li><a href="{{ route('hop_dong.hop_dong_view_all') }}">QUản lí hợp đồng </a></li>
-          <li><a href="{{ route('hop_dong_chi_tiet.hop_dong_chi_tiet_view_all') }}">Quản lí hợp đồng CT</a></li>
         </ul>
       </div>
     </div>

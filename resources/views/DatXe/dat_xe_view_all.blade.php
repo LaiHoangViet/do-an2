@@ -28,7 +28,10 @@
         <tbody>
             @foreach($details as $dat_xe)
             <tr>
-                <td>{{$dat_xe->Ten_Nguoi_nhan}}</td>
+                <td>{{$dat_xe->Ho_ten}}</td>
+            </tr>
+            <tr>
+                <td>{{$dat_xe->Ten_xe}}</td>
             </tr>
             @endforeach
         </tbody>

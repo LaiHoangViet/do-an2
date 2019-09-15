@@ -8,14 +8,6 @@
 	<form action="{{ route('hop_dong.hop_dong_process_insert') }}" method="post">
 		{{csrf_field()}}
 
-		  <div class="row">
-		    <div class="col-25">
-		      <label for="fname">Hợp Đồng</label>
-		    </div>
-		    <div class="col-75">
-		      <input type="text" id="fname" name="So_hop_dong" placeholder="Hợp Đồng..">
-		    </div>
-		  </div>
 
 		  <div class="row">
 		    <div class="col-25">
@@ -43,12 +35,20 @@
 
 		  <div class="row">
 		    <div class="col-25">
-		      <label for="subject">Nội Dung</label>
+		      <label for="fname">Xe</label>
 		    </div>
 		    <div class="col-75">
-		      <textarea id="subject" name="ND_hop_dong" placeholder="Nội Dung.." style="height:200px"></textarea>
+				<select class="form-control" name="Ma_xe">
+					@foreach ($array_xe as $xe)
+						<option value="{{$xe->Ma_xe}}">
+							{{$xe->Ten_xe}}
+						</option>
+					@endforeach
+				</select>
+		    </div>
 		  </div>
-		</div>
+
+
 
 		  <div class="row">
 		    <div class="col-25">
@@ -65,12 +65,22 @@
 
 		  <div class="row">
 		    <div class="col-25">
-		      <label for="subject">Điều Khoản</label>
+		      <label for="lname">Ngày Nhận Xe</label>
 		    </div>
 		    <div class="col-75">
-		      <textarea id="subject" name="Dieu_khoan" placeholder="Điều Khoản.." style="height:200px"></textarea>
+		      <input class="input" type="date" id="lname" name="Ngay_nhan">
+		    </div>
 		  </div>
-		</div>
+
+		  <div class="row">
+		    <div class="col-25">
+		      <label for="lname">Ngày Trả Xe</label>
+		    </div>
+		    <div class="col-75">
+		      <input class="input" type="date" id="lname" name="Ngay_tra">
+		    </div>
+		  </div>
+
 
 		  <div class="row">
 		    <div class="col-25">

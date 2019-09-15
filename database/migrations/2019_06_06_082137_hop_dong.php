@@ -15,13 +15,16 @@ class HopDong extends Migration
     {
         Schema::create('hop_dong', function (Blueprint $table) {
             $table->increments('Ma_hop_dong');
-            $table->string('So_hop_dong',50);
             $table->date('Ngay');
             $table->integer('Ma_khach_hang')->unsigned();
             $table->foreign('Ma_khach_hang')->references('Ma_khach_hang')->on('khach_hang');
-            $table->longText('ND_hop_dong',50);
+
+            $table->integer('Ma_xe')->unsigned();
+            $table->foreign('Ma_xe')->references('Ma_xe')->on('xe');
+            
+            $table->date('Ngay_nhan');
+            $table->date('Ngay_tra');
             $table->string('Hinh_thuc_thanh_toan',50);
-            $table->longText('Dieu_khoan',50);
             $table->string('Tong_tien_thanh_toan',50);
             $table->string('Tien_coc',50);
         });

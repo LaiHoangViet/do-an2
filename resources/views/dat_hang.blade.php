@@ -27,9 +27,6 @@
   </div>
 
   <div class="row">
-    <div class="col-25">
-      <label for="fname">Ten xe:</label>
-    </div>
     <div class="col-75">
 			<div class="form-control">
 				<input type="text" value="{{$xe->Ten_xe}}" readonly>
@@ -38,9 +35,6 @@
     </div>
   </div>
 	<div class="row">
-    <div class="col-25">
-      <label for="fname">Gia xe:</label>
-    </div>
     <div class="col-75">
 			<div class="form-control">
 				<input type="text" name="Tong_tien" value="{{($xe->Gia).' vnđ'}}" readonly>
