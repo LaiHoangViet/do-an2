@@ -13,6 +13,7 @@ use App\Model\KhachHang;
 use App\Model\Xe;
 use App\Model\LoaiXe;
 use App\Model\DatXe;
+use App\Model\HopDong;
 use DB;
 use Request;
 use Session;
@@ -23,7 +24,9 @@ class Controller extends BaseController
 {
     public function layer()
     {
-    	return view('layer.master');
+        $xe     = new Xe();
+        $xe     = $xe->get_six();
+    	return view('layer.trang-chu')->with('xe', $xe);
 
     }
 
@@ -84,7 +87,7 @@ class Controller extends BaseController
 
         Session::flush();
 
-        return redirect()->route('khach_hang_view_login');
+        return redirect()->route('layer');
     }
 
     public function ta_ca_xe()
@@ -167,5 +170,33 @@ class Controller extends BaseController
     }
 
 
+    public function hop_dong($ma_xe)
+    {
+        $ma_khach_hang = Session::get('Ma_khach_hang');
+        $ten_dang_nhap = Session::get('Ten_dang_nhap');
+        $Sdt = Session::get('Sdt');
+        $xe = DB::table('xe')->where('Ma_xe', $ma_xe)->first();
 
+        return view('hop_dong',[
+            'xe' => $xe,
+            'ma_khach_hang' => $ma_khach_hang,
+            'ten_dang_nhap' => $ten_dang_nhap,
+            'Sdt' => $Sdt
+        ]);
+    }
+    public function process_hop_dong()
+    {
+        $hop_dong            = new HopDong();
+        $hop_dong->Ngay       = Request::get('Ngay');
+        $hop_dong->Ma_khach_hang  = Request::get('Ma_khach_hang');
+        $hop_dong->Ma_xe        = Request::get('Ma_xe');
+        $hop_dong->Ngay_nhan       = Request::get('Ngay_nhan');
+        $hop_dong->Ngay_tra       = Request::get('Ngay_tra');
+        $hop_dong->Hinh_thuc_thanh_toan       = Request::get('Hinh_thuc_thanh_toan');
+        $hop_dong->Tong_tien_thanh_toan       = Request::get('Tong_tien_thanh_toan');
+        $hop_dong->Tien_coc  = Request::get('Tien_coc');
+        $hop_dong->insert();
+
+        return redirect()->route('ta_ca_xe');
+    }
 }

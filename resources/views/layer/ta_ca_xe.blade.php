@@ -1,7 +1,5 @@
 @extends('layer.master')
 @section('content')
-
-
     <div class="container">
         
         <ul>

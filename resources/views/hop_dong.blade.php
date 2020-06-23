@@ -11,7 +11,7 @@
 	<br>
 	<br>
 	<center><b>HỢP ĐỒNG CHO THUÊ XE</b> </center>
-Hôm nay, ngày ..... tháng ..... năm ......., chúng tôi gồm:
+Hôm nay, <input type="date" id="fname" name="Ngay">, chúng tôi gồm:
 <br><br>
 <b>BÊN A: LE THI UYEN </b>(Bên cho thuê)
 <br><br>
@@ -19,25 +19,53 @@ Hôm nay, ngày ..... tháng ..... năm ......., chúng tôi gồm:
 <br><br>
 - Điện thoại: 0123456789
 <br><br>
-<b>BÊN B: CÔNG TY .................................................................................</b> (Bên thuê)
-<br><br>
-- Địa chỉ: ......................................................................................................................
-<br><br>
-- Điện thoại: ..................................................................................................................
-<br><br>
+    <div class="row">
+    <div class="col-75">
+			<div class="form-control">
+				<b>BÊN B:<input type="text" name="Ma_khach_hang" value="{{$ma_khach_hang}}" hidden>
+    		<input type="text" value="{{$ten_dang_nhap}}" readonly>
+			</div><br>      
+    </div>
+  </div>
+	<div class="row">
+    <div class="col-75">
+			<div class="form-control">
+				- Điện thoại:<input type="text" name="Ma_khach_hang" value="{{$ma_khach_hang}}" hidden>
+    		<input type="text" value="{{$Sdt}}" readonly>
+			</div>      
+    </div>
+  </div>
+<br>
 Sau khi bàn bạc, thỏa thuận, hai bên thống nhất ký kết Hợp đồng thuê xe với các điều khỏan như sau:
 <br><br>
 <b>ĐIỀU 1: NỘI DUNG HỢP ĐỒNG</b>
 <br><br>
 Bên B đồng ý thuê của bên A một xe ô tô.
 <br><br>
-+ Xe...............................................................................................................................
+ <div class="row">
+    <div class="col-75">
+			<div class="form-control">
+				+ Xe <input type="text" value="{{$xe->Ten_xe}}" readonly>
+				<input type="text" name="Ma_xe" value="{{$xe->Ma_xe}}" hidden>
+			</div>      
+    </div>
+  </div>
 <br><br>
 <b>ĐIỀU 2: GIÁ TRỊ HỢP ĐỒNG, PHƯƠNG THỨC THANH TOÁN:</b>
 <br><br>
-- Giá thuê xe là:................................................................................................................
+- Phương thức thanh toán :		  <div class="row">
+		    <div class="col-75">
+		      <select name="Hinh_thuc_thanh_toan" id="" class="fo-input">
+		      	<option>-- Chọn phương thức thanh toán --</option>
+		      	<option>Chuyển khoản</option>
+		      	<option>Tiền mặt</option>
+		      </select>
+		    </div>
+		  </div>
 <br><br>
-- Bên B sẽ thanh toán cho Bên A số tiền cọc là 500.000 vnd.
+- Giá thuê xe là:.<input type="text" name="Tong_tien_thanh_toan" tabindex="1" required autofocus>
+<br><br>
+- Bên B sẽ thanh toán cho Bên A số tiền cọc <input type="text" name="Tien_coc" tabindex="1" required autofocus>
 <br><br>
 <b>ĐIỀU 3: TRÁCH NHIỆM CỦA CÁC BÊN</b>
 <br><br>
@@ -61,7 +89,7 @@ Bên B đồng ý thuê của bên A một xe ô tô.
 <br><br>
 <b>ĐIỀU 4: HIỆU LỰC HỢP ĐỒNG</b>
 <br><br>
-- Hợp đồng có giá trị kể từ ngày ................... đến hết ngày .........................
+- Hợp đồng có giá trị kể từ ngày <input class="input" type="date" id="lname" name="Ngay_nhan">đến hết ngày <input class="input" type="date" id="lname" name="Ngay_tra">
 <br><br>
 - Nếu một trong hai Bên, bên nào muốn chấm dứt Hợp đồng trước thời hạn thì phải thông báo cho Bên kia trước ít nhất 01 giờ .
 <br><br>
@@ -85,7 +113,14 @@ Hợp đồng được lập thành 02 (hai) bản có giá trị pháp lý như
 		<th width="90%"></th>
 	</tr>
 </table>
-
+<center><div class="row">
+		<button>Xác nhận</button>
+		<a href="{{url()->previous()}}">
+			<button type="button">
+				Quay lại
+			</button>
+		</a>
+		</div></center>
 </form>
 </body>
 </html>

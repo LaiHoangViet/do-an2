@@ -54,6 +54,10 @@ class Xe
 			]);
 		return $array[0];
 	}
+	public function get_six() {
+		$array = DB::select("select * from $this->table limit 6");
+		return $array;
+	}
 	public function update()
 	{
 		DB::update("update $this->table

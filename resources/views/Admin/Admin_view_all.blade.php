@@ -5,14 +5,10 @@
 
 		<form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_admin') }}" method="post" role="Search">
         {{csrf_field()}}
-      <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="key">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
+          <button type="submit">
+            tìm kiếm 
           </button>
-        </div>
-      </div>
     </form>
     <div class="container">
     @if(isset($details))
@@ -89,4 +85,3 @@
 	</table></center>
 	</div>
 @endsection
-	

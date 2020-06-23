@@ -6,7 +6,6 @@ use Request;
 use App\Model\HopDong;
 use App\Model\Xe;
 use App\Model\KhachHang;
-
 class HopDongController extends Controller
 {
     public function hop_dong_view_all()
@@ -87,4 +86,5 @@ class HopDongController extends Controller
 
         return redirect()->route('hop_dong.hop_dong_view_all');
     }
+
 }

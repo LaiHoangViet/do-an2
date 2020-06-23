@@ -17,8 +17,9 @@ Route::get('phan_trang', 'PhanTrangController@phan_trang');
 
 Route::get('gio_hang', 'Controller@gio_hang');
 
-Route::get('layer', 'Controller@layer')->name("layer");
-Route::get('the_loai', 'Controller@the_loai')->name("the_loai");
+Route::get('layer', 'Controller@layer')->name('layer');
+
+Route::get('the_loai', 'Controller@the_loai')->name('the_loai');
 
 
 Route::get('view_file_upload', 'Controller@view_file_upload');
@@ -121,8 +122,9 @@ Route::post('tim_kiem_hd', function(){
 	
 	    $array_hop_dong = DB::table('hop_dong')
 	    ->join('khach_hang','hop_dong.Ma_khach_hang','khach_hang.Ma_khach_hang')
-	    ->orWhere('Ngay','LIKE','%'.$key.'%')
+	    ->join('xe','hop_dong.Ma_xe','xe.Ma_xe')
 	    ->orWhere('Ho_ten','LIKE','%'.$key.'%')
+	    ->orWhere('Ten_xe','LIKE','%'.$key.'%')
 	    ->get();
     if(count($array_hop_dong) > 0)
         return view('HopDong.hop_dong_view_all', ['array_hop_dong' => $array_hop_dong])->withQuery($key);
@@ -157,7 +159,7 @@ Route::post("process_dat_hang", "Controller@process_dat_hang")
 ->name("process_dat_hang");
 
 
-Route::get("hop_dong/{Ma_khach_hang}", "Controller@hop_dong")
+Route::get("hop_dong/{ma_xe}", "Controller@hop_dong")
 ->name("hop_dong");
 Route::post("process_hop_dong", "Controller@process_hop_dong")
 ->name("process_hop_dong");
@@ -241,7 +243,7 @@ Route::group(['prefix' => 'khach_hang'],function(){
 
 
 Route::group(['prefix' => 'loai_xe'],function(){
-	Route::get('', 'LoaiXeController@loai_xe_view_all')
+	Route::get('/', 'LoaiXeController@loai_xe_view_all')
 	->name('loai_xe.loai_xe_view_all');
 
 	Route::get('loai_xe_view_insert', 'LoaiXeController@loai_xe_view_insert')
@@ -295,6 +297,7 @@ Route::group(['prefix' => 'hop_dong'],function(){
 
 	Route::get('hop_dong_delete/{id}', 'HopDongController@hop_dong_delete')
 	->name('hop_dong.hop_dong_delete');
+
 });
 
 

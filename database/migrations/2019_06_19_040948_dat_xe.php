@@ -14,7 +14,7 @@ class DatXe extends Migration
     public function up()
     {
         Schema::create('dat_xe', function (Blueprint $table) {
-            $table->increments('Ma_sua_chua');
+            $table->increments('Ma_dat_xe');
             $table->date ('Ngay');
 
             $table->integer('Ma_khach_hang')->unsigned();

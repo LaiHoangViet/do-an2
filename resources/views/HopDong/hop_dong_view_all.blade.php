@@ -6,14 +6,10 @@
 
          <form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_hd') }}" method="post" role="Search">
         {{csrf_field()}}
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="key">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
+      <input type="text" class="form-control" placeholder="Search" name="key">
+          <button type="submit">
+            tìm kiếm 
           </button>
-        </div>
-      </div>
     </form>
     <div class="container">
     @if(isset($details))
@@ -22,15 +18,15 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Số hợp đồng </th>
-                <th>Tên khách hàng</th>
+                <th>Tên khách hàng </th>
+                <th>Tên xe</th>
             </tr>
         </thead>
         <tbody>
             @foreach($details as $hop_dong)
             <tr>
-                <td>{{$hop_dong->Ngay}}</td>
                 <td>{{$hop_dong->Ho_ten}}</td>
+                <td>{{$hop_dong->Ten_xe}}</td>
             </tr>
             @endforeach
         </tbody>
