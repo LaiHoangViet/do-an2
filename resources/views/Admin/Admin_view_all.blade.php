@@ -1,37 +1,37 @@
 @extends('layerAdmin.Admin_master')
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 
-		<form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_admin') }}" method="post" role="Search">
-        {{csrf_field()}}
-        <input type="text" class="form-control" placeholder="Search" name="key">
-          <button type="submit">
-            tìm kiếm 
-          </button>
-    </form>
-    <div class="container">
-    @if(isset($details))
-        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
-    <h2>Sample User details</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Tên đăng nhập</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($details as $Admin)
-            <tr>
-                <td>{{$Admin->Ten_dang_nhap}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-  </div>
-  @elseif(isset($Message))
-  <p>{{$message}}</p>
-    @endif
+	<form class="navbar-form navbar-left" action="{{ URL::to('tim_kiem_admin') }}" method="post" role="Search">
+		{{csrf_field()}}
+		<input type="text" class="form-control" placeholder="Search" name="key">
+		<button type="submit">
+			tìm kiếm 
+		</button>
+	</form>
+	<div class="container">
+		@if(isset($details))
+		<p> The Search results for your query <b> {{ $query }} </b> are :</p>
+		<h2>Sample User details</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Tên đăng nhập</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($details as $Admin)
+				<tr>
+					<td>{{$Admin->Ten_dang_nhap}}</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div>
+	@elseif(isset($Message))
+	<p>{{$message}}</p>
+	@endif
 </div>
 
 <center>
@@ -40,19 +40,23 @@
 		<button>
 			Thêm Admin
 		</button>
-	</a><br><br>
+	</a>
+	<br><br>
 	
-	<table border="1" width="100%">
-		<tr>
-			<th>Tên Đăng Nhập</th>
-			<th>Mật Khẩu</th>
-			<th>Giới Tính</th>
-			<th>Năm Sinh</th>
-			<th>Số Điện Thoại</th>
-			<th>Địa Chỉ</th>
-			<th>Email</th>
-		</tr>
-		@foreach ($array_Admin as $Admin)
+	<table class="table table-striped view-khach-hang table-responsive-lg">
+		<thead>
+			<tr>
+				<th scope="col">Tên Đăng Nhập</th>
+				<th scope="col">Mật Khẩu</th>
+				<th scope="col">Giới Tính</th>
+				<th scope="col">Năm Sinh</th>
+				<th scope="col">Số Điện Thoại</th>
+				<th scope="col">Địa Chỉ</th>
+				<th scope="col">Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach ($array_Admin as $Admin)
 			<tr>
 				<td>
 					{{$Admin->Ten_dang_nhap}}
@@ -61,11 +65,11 @@
 					{{$Admin->Mat_khau}}
 				</td>
 				<td>
-				@if ($Admin->Gioi_tinh==1)
+					@if ($Admin->Gioi_tinh==1)
 					Nam
-				@else
+					@else
 					Nữ
-				@endif
+					@endif
 				</td>
 				<td>
 					{{$Admin->Nam_sinh}}
@@ -79,9 +83,11 @@
 				<td>
 					{{$Admin->Email}}
 				</td>
-				
 			</tr>
-		@endforeach
-	</table></center>
-	</div>
+			@endforeach
+		</tbody>
+	</table>
+
+</center>
+
 @endsection
