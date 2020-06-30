@@ -11,11 +11,6 @@
 
   <title>HAND IN HAND</title>
 
-
-
-  <!-- Bootstrap core CSS -->
-  {{-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --}}
-
   <!-- Custom fonts for this template -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,19 +18,20 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 
-  <!-- Custom styles for this template -->
+  <!-- Css của các trang  -->
   <link href="{{asset('css/grayscale.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/menu1.css')}}" rel="stylesheet">
   <link href="{{asset('css/content.css')}}" rel="stylesheet">
   <link href="{{asset('css/footer.css')}}" rel="stylesheet">
   <link href="{{asset('css/ta_ca_xe.css')}}" rel="stylesheet">
+  <link href="{{asset('css/gioi-thieu.css')}}" rel="stylesheet">
+  <link href="{{asset('css/chi-tiet-xe.css')}}" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 
-  <header class="masthead">
-   {{-- Header slideshow --}}
+{{--   <header class="masthead">
    <div class="banner slide-header">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -45,18 +41,18 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./Img/demo-image-01.jpg" class="d-block w-100 anh-header">
+          <img src="{{asset('Img/demo-image-01.jpg')}}" class="d-block w-100 anh-header">
         </div>
         <div class="carousel-item">
-          <img src="./Img/demo-image-02.jpg" class="d-block w-100 anh-header">
+          <img src="{{asset('Img/demo-image-02.jpg')}}" class="d-block w-100 anh-header">
         </div>
         <div class="carousel-item">
-          <img src="./Img/demo-image-01.jpg" class="d-block w-100 anh-header">
+          <img src="{{asset('Img/demo-image-01.jpg')}}" class="d-block w-100 anh-header">
         </div>
       </div>
     </div>
   </div>
-</header>
+</header> --}}
 
 
 @include('layer.menu')
@@ -72,7 +68,7 @@
 <div class="footer">
   <div class="footer-1">
     <div class="footer-2 logo-cong-ty">
-      <img src="./Img/logo.jpg">    
+      <img src="{{asset('Img/logo.jpg')}}">    
       <span class="name-cong-ty">HAND IN HAND</span>
       <span class="dia-chi-footer">Tầng 11, Vincom Hai Bà Trưng - Hà Nội</span>
       <span class="so-dien-thoai">(024) 3562 5939 - (024) 3562 5940</span>

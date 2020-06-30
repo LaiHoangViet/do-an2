@@ -1,6 +1,7 @@
 @extends('layer.master')
 @section('content')
 
+@include('layer.header')
 
 <div class="body">
 
@@ -62,7 +63,7 @@
     <div style="clear: both;" class="row xe-nen-chon">
       @foreach ($xe as $value)
       <div class="col-md-4 xe-ne-chon1">
-        <a class="xe-nen-chon2" href="#">
+        <a class="xe-nen-chon2" href="{{ route('chi_tiet_xe', ['id' => $value->Ma_xe]) }}">
           <img class="anh" src="storage/{{$value->Anh}}" alt="">
           <span class="ten">{{$value->Ten_xe}}</span>
           <span class="gia">{{$value->Gia}}</span>
